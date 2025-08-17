@@ -134,59 +134,35 @@ export default function Map({ onDistrictSelect }: MapProps) {
     }
   }, [onDistrictSelect])
 
-  return (
-    <div className="relative w-full h-full">
-      <div ref={mapRef} className="w-full h-full rounded-lg" />
-      
-      {/* Risk Legend */}
-      <div className="absolute top-4 left-4 z-[1000] bg-white rounded-lg shadow-md p-3">
-        <div className="text-xs text-gray-600 font-medium mb-2">Insulin Access Risk</div>
-        <div className="space-y-2">
+    return (
+    <div className="w-full h-full">
+      {/* Risk Legend - Outside Map */}
+      <div className="mb-4 bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+        <div className="text-sm text-gray-700 font-medium mb-3">Insulin Access Risk Legend</div>
+        <div className="flex flex-wrap items-center gap-6">
           <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-green-500 rounded-sm"></div>
-            <span className="text-xs text-gray-700">Low (0-25)</span>
+            <div className="w-5 h-5 bg-green-500 rounded-sm border border-gray-300"></div>
+            <span className="text-sm text-gray-700">Low (0-25)</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-yellow-500 rounded-sm"></div>
-            <span className="text-xs text-gray-700">Medium (26-50)</span>
+            <div className="w-5 h-5 bg-yellow-500 rounded-sm border border-gray-300"></div>
+            <span className="text-sm text-gray-700">Medium (26-50)</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-orange-500 rounded-sm"></div>
-            <span className="text-xs text-gray-700">High (51-75)</span>
+            <div className="w-5 h-5 bg-orange-500 rounded-sm border border-gray-300"></div>
+            <span className="text-sm text-gray-700">High (51-75)</span>
           </div>
           <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-red-500 rounded-sm"></div>
-            <span className="text-xs text-gray-700">Critical (76-100)</span>
+            <div className="w-5 h-5 bg-red-500 rounded-sm border border-gray-300"></div>
+            <span className="text-sm text-gray-700">Critical (76-100)</span>
           </div>
-        </div>
-        <div className="mt-2 pt-2 border-t border-gray-200">
-          <div className="text-xs text-gray-500">Low → High Risk</div>
+          <div className="text-sm text-gray-500 font-medium">Low → High Risk</div>
         </div>
       </div>
       
-      {/* Map Controls Overlay */}
-      <div className="absolute top-4 right-4 z-[1000] bg-white rounded-lg shadow-md p-2">
-        <div className="text-xs text-gray-600 font-medium mb-1">Map Controls</div>
-        <div className="flex space-x-2">
-          <button
-            onClick={() => mapInstanceRef.current?.setView([39.8283, -98.5795], 4)}
-            className="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-xs rounded transition-colors"
-          >
-            Reset
-          </button>
-          <button
-            onClick={() => mapInstanceRef.current?.zoomIn()}
-            className="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-xs rounded transition-colors"
-          >
-            +
-          </button>
-          <button
-            onClick={() => mapInstanceRef.current?.zoomOut()}
-            className="px-2 py-1 bg-gray-100 hover:bg-gray-200 text-xs rounded transition-colors"
-          >
-            -
-          </button>
-        </div>
+      {/* Map Container */}
+      <div className="relative w-full h-full">
+        <div ref={mapRef} className="w-full h-full rounded-lg" />
       </div>
     </div>
   )

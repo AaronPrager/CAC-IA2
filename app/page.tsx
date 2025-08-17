@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { MapPin, AlertTriangle, BarChart3, Info } from 'lucide-react'
+import { MapPin, AlertTriangle, BarChart3, Info, Search } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import DistrictDrawer from '@/app/(components)/DistrictDrawer'
+import { useSearchParams } from 'next/navigation'
 
 const Map = dynamic(() => import('@/app/(components)/Map'), {
   ssr: false,
@@ -13,9 +14,29 @@ const Map = dynamic(() => import('@/app/(components)/Map'), {
 
 export default function HomePage() {
   const [selectedDistrictId, setSelectedDistrictId] = useState<string | null>(null)
+  const [searchTerm, setSearchTerm] = useState('')
+  const searchParams = useSearchParams()
+
+  // Handle URL parameter on load
+  useEffect(() => {
+    const idParam = searchParams.get('id')
+    if (idParam) {
+      setSelectedDistrictId(idParam)
+    }
+  }, [searchParams])
 
   const handleDistrictSelect = (districtId: string) => {
     setSelectedDistrictId(districtId)
+  }
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchTerm.trim()) {
+      // Check if it's a district ID format (e.g., MA-04) or member name
+      const districtId = searchTerm.trim().toUpperCase()
+      setSelectedDistrictId(districtId)
+      setSearchTerm('')
+    }
   }
 
   return (
@@ -55,9 +76,34 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Risk Map Section */}
             <div className="lg:col-span-2">
-              <div className="card h-96">
-                <h2 className="text-lg font-semibold text-gray-900 mb-4">Insulin Access Risk Map</h2>
-                <Map onDistrictSelect={handleDistrictSelect} />
+              <div className="card h-[650px]">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Insulin Access Risk Map</h2>
+                
+                {/* Search Box */}
+                <div className="mb-4">
+                  <form onSubmit={handleSearch} className="flex items-center space-x-2">
+                    <div className="relative flex-1">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                      <input
+                        type="text"
+                        placeholder="Search by district ID (e.g., MA-04) or member name..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors"
+                    >
+                      Search
+                    </button>
+                  </form>
+                </div>
+                
+                <div className="h-96">
+                  <Map onDistrictSelect={handleDistrictSelect} />
+                </div>
               </div>
             </div>
 
