@@ -1,0 +1,140 @@
+{
+  "alerts": [
+    {
+      "id": "1",
+      "title": "Population Data Update",
+      "message": "New census data available for MA-04 district",
+      "severity": "warning",
+      "source": "census",
+      "districtId": "MA-04",
+      "timestamp": "2024-01-15T08:30:00Z",
+      "status": "active",
+      "metadata": {
+        "dataType": "population",
+        "changePercent": 2.3,
+        "previousValue": 718456,
+        "newValue": 734823
+      }
+    },
+    {
+      "id": "2",
+      "title": "Economic Indicators",
+      "message": "Q3 economic data published for CA-16",
+      "severity": "info",
+      "source": "economic",
+      "districtId": "CA-16",
+      "timestamp": "2024-01-15T06:15:00Z",
+      "status": "active",
+      "metadata": {
+        "dataType": "economic",
+        "gdpGrowth": 3.2,
+        "unemploymentRate": 4.1,
+        "medianIncome": 125000
+      }
+    },
+    {
+      "id": "3",
+      "title": "Critical Infrastructure Alert",
+      "message": "Road construction project affecting GA-07",
+      "severity": "critical",
+      "source": "infrastructure",
+      "districtId": "GA-07",
+      "timestamp": "2024-01-14T14:20:00Z",
+      "status": "active",
+      "metadata": {
+        "dataType": "infrastructure",
+        "projectType": "road_construction",
+        "duration": "6 months",
+        "affectedArea": "northeast_sector"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Demographic Changes",
+      "message": "Significant population shift detected in TX-23",
+      "severity": "warning",
+      "source": "demographic",
+      "districtId": "TX-23",
+      "timestamp": "2024-01-13T16:45:00Z",
+      "status": "active",
+      "metadata": {
+        "dataType": "demographic",
+        "changeType": "population_shift",
+        "affectedDemographics": ["age_25_34", "college_educated"],
+        "migrationSource": "urban_areas"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Education Metrics",
+      "message": "School performance data updated for NY-12",
+      "severity": "info",
+      "source": "education",
+      "districtId": "NY-12",
+      "timestamp": "2024-01-12T11:30:00Z",
+      "status": "resolved",
+      "metadata": {
+        "dataType": "education",
+        "graduationRate": 89.2,
+        "testScores": 78.5,
+        "teacherRatio": 18.2
+      }
+    },
+    {
+      "id": "6",
+      "title": "Healthcare Access",
+      "message": "New medical facility opening in FL-18",
+      "severity": "info",
+      "source": "health",
+      "districtId": "FL-18",
+      "timestamp": "2024-01-10T09:15:00Z",
+      "status": "resolved",
+      "metadata": {
+        "dataType": "health",
+        "facilityType": "urgent_care",
+        "location": "central_district",
+        "expectedOpening": "2024-03-01"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Election Data Update",
+      "message": "Voter registration numbers updated for MA-04",
+      "severity": "info",
+      "source": "election",
+      "districtId": "MA-04",
+      "timestamp": "2024-01-14T10:00:00Z",
+      "status": "active",
+      "metadata": {
+        "dataType": "election",
+        "registeredVoters": 456789,
+        "changeFromPrevious": 2345,
+        "lastElection": "2022"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Economic Warning",
+      "message": "Unemployment rate increase detected in GA-07",
+      "severity": "warning",
+      "source": "economic",
+      "districtId": "GA-07",
+      "timestamp": "2024-01-13T13:20:00Z",
+      "status": "active",
+      "metadata": {
+        "dataType": "economic",
+        "unemploymentRate": 6.8,
+        "previousRate": 5.9,
+        "changePercent": 15.3
+      }
+    }
+  ],
+  "metadata": {
+    "totalAlerts": 8,
+    "activeAlerts": 6,
+    "resolvedAlerts": 2,
+    "lastUpdated": "2024-01-15T12:00:00Z",
+    "dataSource": "Multiple sources",
+    "version": "1.0.0"
+  }
+}

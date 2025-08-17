@@ -1,0 +1,94 @@
+{
+  "districts": [
+    {
+      "id": "MA-04",
+      "name": "Massachusetts 4th District",
+      "state": "Massachusetts",
+      "stateCode": "MA",
+      "population": 734823,
+      "area": 325,
+      "coordinates": [42.3601, -71.0589],
+      "bounds": [[42.2, -71.2], [42.5, -70.9]],
+      "representative": "Jake Auchincloss",
+      "party": "Democratic",
+      "lastElection": "2022",
+      "margin": 0.12
+    },
+    {
+      "id": "CA-16",
+      "name": "California 16th District",
+      "state": "California",
+      "stateCode": "CA",
+      "population": 761387,
+      "area": 412,
+      "coordinates": [37.3382, -121.8863],
+      "bounds": [[37.2, -122.0], [37.5, -121.7]],
+      "representative": "Anna Eshoo",
+      "party": "Democratic",
+      "lastElection": "2022",
+      "margin": 0.34
+    },
+    {
+      "id": "GA-07",
+      "name": "Georgia 7th District",
+      "state": "Georgia",
+      "stateCode": "GA",
+      "population": 789234,
+      "area": 298,
+      "coordinates": [33.7490, -84.3880],
+      "bounds": [[33.6, -84.5], [33.9, -84.2]],
+      "representative": "Lucy McBath",
+      "party": "Democratic",
+      "lastElection": "2022",
+      "margin": 0.08
+    },
+    {
+      "id": "TX-23",
+      "name": "Texas 23rd District",
+      "state": "Texas",
+      "stateCode": "TX",
+      "population": 812456,
+      "area": 567,
+      "coordinates": [29.4241, -98.4936],
+      "bounds": [[29.2, -98.7], [29.6, -98.2]],
+      "representative": "Tony Gonzales",
+      "party": "Republican",
+      "lastElection": "2022",
+      "margin": 0.15
+    },
+    {
+      "id": "NY-12",
+      "name": "New York 12th District",
+      "state": "New York",
+      "stateCode": "NY",
+      "population": 745123,
+      "area": 234,
+      "coordinates": [40.7128, -74.0060],
+      "bounds": [[40.6, -74.1], [40.8, -73.9]],
+      "representative": "Jerry Nadler",
+      "party": "Democratic",
+      "lastElection": "2022",
+      "margin": 0.42
+    },
+    {
+      "id": "FL-18",
+      "name": "Florida 18th District",
+      "state": "Florida",
+      "stateCode": "FL",
+      "population": 798234,
+      "area": 456,
+      "coordinates": [26.7153, -80.0534],
+      "bounds": [[26.6, -80.2], [26.8, -79.9]],
+      "representative": "Brian Mast",
+      "party": "Republican",
+      "lastElection": "2022",
+      "margin": 0.18
+    }
+  ],
+  "metadata": {
+    "totalDistricts": 6,
+    "lastUpdated": "2024-01-15T12:00:00Z",
+    "dataSource": "Census Bureau, Election Commission",
+    "version": "1.0.0"
+  }
+}

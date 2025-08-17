@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "MA-04",
+        "name": "Massachusetts 4th District",
+        "state": "MA",
+        "population": 734823,
+        "score": 84,
+        "representative": "Jake Auchincloss",
+        "party": "Democratic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-71.2, 42.2],
+          [-70.9, 42.2],
+          [-70.9, 42.5],
+          [-71.2, 42.5],
+          [-71.2, 42.2]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "CA-16",
+        "name": "California 16th District",
+        "state": "CA",
+        "population": 761387,
+        "score": 88,
+        "representative": "Anna Eshoo",
+        "party": "Democratic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-122.0, 37.2],
+          [-121.7, 37.2],
+          [-121.7, 37.5],
+          [-122.0, 37.5],
+          [-122.0, 37.2]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "GA-07",
+        "name": "Georgia 7th District",
+        "state": "GA",
+        "population": 789234,
+        "score": 71,
+        "representative": "Lucy McBath",
+        "party": "Democratic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.5, 33.6],
+          [-84.2, 33.6],
+          [-84.2, 33.9],
+          [-84.5, 33.9],
+          [-84.5, 33.6]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "TX-23",
+        "name": "Texas 23rd District",
+        "state": "TX",
+        "population": 812456,
+        "score": 73,
+        "representative": "Tony Gonzales",
+        "party": "Republican"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-98.7, 29.2],
+          [-98.2, 29.2],
+          [-98.2, 29.6],
+          [-98.7, 29.6],
+          [-98.7, 29.2]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "NY-12",
+        "name": "New York 12th District",
+        "state": "NY",
+        "population": 745123,
+        "score": 79,
+        "representative": "Jerry Nadler",
+        "party": "Democratic"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-74.1, 40.6],
+          [-73.9, 40.6],
+          [-73.9, 40.8],
+          [-74.1, 40.8],
+          [-74.1, 40.6]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FL-18",
+        "name": "Florida 18th District",
+        "state": "FL",
+        "population": 798234,
+        "score": 76,
+        "representative": "Brian Mast",
+        "party": "Republican"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-80.2, 26.6],
+          [-79.9, 26.6],
+          [-79.9, 26.8],
+          [-80.2, 26.8],
+          [-80.2, 26.6]
+        ]]
+      }
+    }
+  ],
+  "metadata": {
+    "name": "Sample Congressional Districts",
+    "description": "Sample district boundaries for demonstration purposes",
+    "version": "1.0.0",
+    "lastUpdated": "2024-01-15T12:00:00Z",
+    "coordinateSystem": "WGS84",
+    "units": "degrees"
+  }
+}

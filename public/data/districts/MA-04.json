@@ -1,0 +1,117 @@
+{
+  "id": "MA-04",
+  "name": "Massachusetts 4th District",
+  "state": "Massachusetts",
+  "stateCode": "MA",
+  "population": 734823,
+  "area": 325,
+  "coordinates": [42.3601, -71.0589],
+  "bounds": [[42.2, -71.2], [42.5, -70.9]],
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[
+      [-71.2, 42.2],
+      [-70.9, 42.2],
+      [-70.9, 42.5],
+      [-71.2, 42.5],
+      [-71.2, 42.2]
+    ]]
+  },
+  "insulinAccessRisk": {
+    "riskLevel": "medium",
+    "riskScore": 65,
+    "factors": {
+      "uninsuredRate": 8.2,
+      "diabetesPrevalence": 9.1,
+      "pharmacyAccess": 78,
+      "incomeLevel": 125000,
+      "ruralAccess": 25
+    },
+    "lastUpdated": "2024-01-15T12:00:00Z"
+  },
+  "representative": {
+    "name": "Jake Auchincloss",
+    "party": "Democratic",
+    "phone": "(202) 225-5931",
+    "email": "district4@mail.house.gov",
+    "officeAddress": "Washington, DC",
+    "committeeMemberships": ["Armed Services", "Transportation"],
+    "insulinVotingRecord": {
+      "supportForInsulinBills": 85,
+      "recentVotes": [
+        {
+          "bill": "HR 1234",
+          "vote": "yes",
+          "date": "2024-01-10"
+        }
+      ]
+    }
+  },
+  "legislativeLinks": [
+    {
+      "id": "1",
+      "title": "HR 1234: Insulin Affordability Act",
+      "url": "https://congress.gov/bill/118th-congress/house-bill/1234",
+      "status": "Introduced",
+      "impact": "Direct"
+    },
+    {
+      "id": "2",
+      "title": "S 567: Pharmacy Access Bill",
+      "url": "https://congress.gov/bill/118th-congress/senate-bill/567",
+      "status": "In Committee",
+      "impact": "Indirect"
+    },
+    {
+      "id": "3",
+      "title": "HR 890: Diabetes Prevention Act",
+      "url": "https://congress.gov/bill/118th-congress/house-bill/890",
+      "status": "Passed House",
+      "impact": "Indirect"
+    }
+  ],
+  "sites": [
+    {
+      "id": "1",
+      "name": "Census Bureau - District Profile",
+      "url": "https://data.census.gov/profile",
+      "type": "census",
+      "description": "Demographic and economic data for the district"
+    },
+    {
+      "id": "2",
+      "name": "CDC Diabetes Atlas",
+      "url": "https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html",
+      "type": "health",
+      "description": "Diabetes prevalence and health indicators"
+    },
+    {
+      "id": "3",
+      "name": "BLS Economic Data",
+      "url": "https://www.bls.gov/eag/",
+      "type": "economic",
+      "description": "Employment and economic indicators"
+    },
+    {
+      "id": "4",
+      "name": "HHS Health Resources",
+      "url": "https://data.hrsa.gov/",
+      "type": "health",
+      "description": "Healthcare access and provider data"
+    },
+    {
+      "id": "5",
+      "name": "USDA Rural Development",
+      "url": "https://www.rd.usda.gov/",
+      "type": "infrastructure",
+      "description": "Rural development and infrastructure data"
+    },
+    {
+      "id": "6",
+      "name": "Congress.gov District Info",
+      "url": "https://www.congress.gov/members",
+      "type": "legislation",
+      "description": "Representative information and voting records"
+    }
+  ]
+}
