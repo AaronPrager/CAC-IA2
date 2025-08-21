@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "WA-03",
+  "name": "Washington 3",
+  "state": "WA",
+  "member": "Rep. Marie Gluesenkamp Perez",
+  "metrics": {
+    "access_proximity": 22,
+    "coverage_friction": 85,
+    "availability": 71,
+    "price_pressure": 57,
+    "risk_score": 54
+  },
+  "drivers": [
+    "Weak or no copay cap",
+    "Recent FDA shortage signal"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.hca.wa.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 9549 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-14"
+    },
+    {
+      "type": "press",
+      "title": "Member statement on insulin pricing",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-26"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "WA-03 Site 1",
+      "lat": 29.356,
+      "lon": -114.5589
+    },
+    {
+      "site_type": "CHC",
+      "name": "WA-03 Site 2",
+      "lat": 34.9451,
+      "lon": -91.4759
+    },
+    {
+      "site_type": "CHC",
+      "name": "WA-03 Site 3",
+      "lat": 33.8872,
+      "lon": -81.2906
+    },
+    {
+      "site_type": "340B",
+      "name": "WA-03 Site 4",
+      "lat": 39.9659,
+      "lon": -82.5886
+    },
+    {
+      "site_type": "CHC",
+      "name": "WA-03 Site 5",
+      "lat": 45.004,
+      "lon": -70.1753
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "CA-02",
+  "name": "California 2",
+  "state": "CA",
+  "member": "Rep. Jared Huffman",
+  "metrics": {
+    "access_proximity": 57,
+    "coverage_friction": 31,
+    "availability": 61,
+    "price_pressure": 49,
+    "risk_score": 49
+  },
+  "drivers": [
+    "Below-median site density"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.dhcs.ca.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 3545 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-27"
+    },
+    {
+      "type": "press",
+      "title": "Member statement on insulin pricing",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-23"
+    },
+    {
+      "type": "press",
+      "title": "Member statement on insulin pricing",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-25"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "CA-02 Site 1",
+      "lat": 31.3524,
+      "lon": -91.8676
+    },
+    {
+      "site_type": "340B",
+      "name": "CA-02 Site 2",
+      "lat": 46.2078,
+      "lon": -112.0166
+    },
+    {
+      "site_type": "CHC",
+      "name": "CA-02 Site 3",
+      "lat": 41.1086,
+      "lon": -102.4885
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

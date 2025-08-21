@@ -2,11 +2,7 @@
 
 interface ScoreBarsProps {
   scores: {
-    uninsuredRate: number
-    diabetesPrevalence: number
-    pharmacyAccess: number
-    incomeLevel: number
-    ruralAccess: number
+    [key: string]: number
   }
   overallRisk: number
 }
@@ -68,75 +64,22 @@ export default function ScoreBars({ scores, overallRisk }: ScoreBarsProps) {
 
       {/* Individual Risk Factors */}
       <div className="space-y-3">
-        {/* Uninsured Rate */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-gray-700">Uninsured Rate</span>
-            <span className="text-sm text-gray-900">{formatPercentage(scores.uninsuredRate)}</span>
+        {Object.entries(scores).map(([key, value]) => (
+          <div key={key}>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-sm font-medium text-gray-700">
+                {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+              </span>
+              <span className="text-sm text-gray-900">{value}%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div 
+                className={`h-2 rounded-full ${getRiskColor(value)} transition-all duration-300`}
+                style={{ width: `${value}%` }}
+              />
+            </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className={`h-2 rounded-full ${getRiskColor(scores.uninsuredRate)} transition-all duration-300`}
-              style={{ width: `${scores.uninsuredRate}%` }}
-            />
-          </div>
-        </div>
-
-        {/* Diabetes Prevalence */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-gray-700">Diabetes Prevalence</span>
-            <span className="text-sm text-gray-900">{formatPercentage(scores.diabetesPrevalence)}</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className={`h-2 rounded-full ${getRiskColor(scores.diabetesPrevalence)} transition-all duration-300`}
-              style={{ width: `${scores.diabetesPrevalence}%` }}
-            />
-          </div>
-        </div>
-
-        {/* Pharmacy Access (inverted - higher is better) */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-gray-700">Pharmacy Access</span>
-            <span className="text-sm text-gray-900">{formatPercentage(scores.pharmacyAccess)}</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className={`h-2 rounded-full ${getRiskColor(100 - scores.pharmacyAccess)} transition-all duration-300`}
-              style={{ width: `${100 - scores.pharmacyAccess}%` }}
-            />
-          </div>
-        </div>
-
-        {/* Income Level (inverted - higher is better) */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-gray-700">Average Income</span>
-            <span className="text-sm text-gray-900">{formatIncome(scores.incomeLevel)}</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className={`h-2 rounded-full ${getRiskColor(Math.max(0, 100 - (scores.incomeLevel / 2000)))} transition-all duration-300`}
-              style={{ width: `${Math.max(0, 100 - (scores.incomeLevel / 2000))}%` }}
-            />
-          </div>
-        </div>
-
-        {/* Rural Access */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-gray-700">Rural Population</span>
-            <span className="text-sm text-gray-900">{formatPercentage(scores.ruralAccess)}</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className={`h-2 rounded-full ${getRiskColor(scores.ruralAccess)} transition-all duration-300`}
-              style={{ width: `${scores.ruralAccess}%` }}
-            />
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Legend */}

@@ -38,3 +38,5 @@ To run the ETL process:
 3. Check ../public/data/ for output files
 
 Note: The script expects JSON format for all input files.
+
+

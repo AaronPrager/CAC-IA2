@@ -1,0 +1,113 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "AZ-03",
+  "name": "Arizona 3",
+  "state": "AZ",
+  "member": "Rep. Ruben Gallego",
+  "metrics": {
+    "access_proximity": 23,
+    "coverage_friction": 33,
+    "availability": 63,
+    "price_pressure": 28,
+    "risk_score": 34
+  },
+  "drivers": [
+    "Below-median site density"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.azahcccs.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 4218 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-14"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 5933 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-13"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 3250 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-14"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "AZ-03 Site 1",
+      "lat": 27.8535,
+      "lon": -71.5292
+    },
+    {
+      "site_type": "340B",
+      "name": "AZ-03 Site 2",
+      "lat": 25.2894,
+      "lon": -90.8996
+    },
+    {
+      "site_type": "340B",
+      "name": "AZ-03 Site 3",
+      "lat": 47.5929,
+      "lon": -116.5123
+    },
+    {
+      "site_type": "340B",
+      "name": "AZ-03 Site 4",
+      "lat": 25.6283,
+      "lon": -117.3986
+    },
+    {
+      "site_type": "340B",
+      "name": "AZ-03 Site 5",
+      "lat": 34.9045,
+      "lon": -77.8172
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

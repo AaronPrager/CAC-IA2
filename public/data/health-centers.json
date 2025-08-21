@@ -1,0 +1,126 @@
+{
+  "healthCenters": [
+    {
+      "id": "HC-MA-001",
+      "name": "Community Health Center of Cape Cod",
+      "type": "FQHC",
+      "address": {
+        "street": "107 Commercial Street",
+        "city": "Provincetown",
+        "state": "MA",
+        "zipCode": "02657",
+        "coordinates": [42.0587, -70.1787]
+      },
+      "services": ["Primary Care", "Pharmacy", "Diabetes Management", "Mental Health"],
+      "hours": "Mon-Fri 8AM-6PM, Sat 9AM-1PM",
+      "phone": "(508) 487-9395",
+      "website": "https://www.capecodhealth.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "HC-MA-002",
+      "name": "Martha's Vineyard Community Services",
+      "type": "FQHC",
+      "address": {
+        "street": "111 Edgartown Road",
+        "city": "Vineyard Haven",
+        "state": "MA",
+        "zipCode": "02568",
+        "coordinates": [41.4545, -70.5995]
+      },
+      "services": ["Primary Care", "Pharmacy", "Diabetes Education", "Social Services"],
+      "hours": "Mon-Fri 8AM-5PM",
+      "phone": "(508) 693-7900",
+      "website": "https://www.mvcommunityservices.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "HC-MA-003",
+      "name": "Boston Health Care for the Homeless Program",
+      "type": "FQHC",
+      "address": {
+        "street": "780 Albany Street",
+        "city": "Boston",
+        "state": "MA",
+        "zipCode": "02118",
+        "coordinates": [42.3601, -71.0589]
+      },
+      "services": ["Primary Care", "Pharmacy", "Diabetes Care", "Mental Health", "Substance Use"],
+      "hours": "Mon-Fri 7AM-7PM, Sat 8AM-4PM",
+      "phone": "(857) 654-1000",
+      "website": "https://www.bhchp.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "HC-CA-001",
+      "name": "Santa Clara Valley Medical Center",
+      "type": "FQHC",
+      "address": {
+        "street": "751 S Bascom Ave",
+        "city": "San Jose",
+        "state": "CA",
+        "zipCode": "95128",
+        "coordinates": [37.3382, -121.8863]
+      },
+      "services": ["Primary Care", "Specialty Care", "Pharmacy", "Diabetes Management"],
+      "hours": "Mon-Fri 7AM-7PM, Sat 8AM-4PM",
+      "phone": "(408) 885-5000",
+      "website": "https://www.scvmc.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "HC-CA-002",
+      "name": "Alameda Health System",
+      "type": "FQHC",
+      "address": {
+        "street": "1411 E 31st Street",
+        "city": "Oakland",
+        "state": "CA",
+        "zipCode": "94602",
+        "coordinates": [37.7749, -122.2194]
+      },
+      "services": ["Primary Care", "Pharmacy", "Diabetes Care", "Mental Health"],
+      "hours": "Mon-Fri 8AM-6PM, Sat 9AM-3PM",
+      "phone": "(510) 437-4800",
+      "website": "https://www.alamedahealthsystem.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "HC-GA-001",
+      "name": "Grady Health System",
+      "type": "FQHC",
+      "address": {
+        "street": "80 Jesse Hill Jr Dr SE",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipCode": "30303",
+        "coordinates": [33.7490, -84.3880]
+      },
+      "services": ["Primary Care", "Pharmacy", "Diabetes Care", "Mental Health"],
+      "hours": "Mon-Fri 8AM-8PM, Sat 9AM-5PM",
+      "phone": "(404) 616-1000",
+      "website": "https://www.gradyhealth.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "HC-GA-002",
+      "name": "Mercy Care",
+      "type": "FQHC",
+      "address": {
+        "street": "424 Decatur Street SE",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipCode": "30312",
+        "coordinates": [33.7489, -84.3880]
+      },
+      "services": ["Primary Care", "Pharmacy", "Diabetes Management", "Mental Health"],
+      "hours": "Mon-Fri 8AM-6PM, Sat 9AM-2PM",
+      "phone": "(404) 880-9000",
+      "website": "https://www.mercyatlanta.org",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    }
+  ],
+  "lastUpdated": "2024-01-15T12:00:00Z",
+  "source": "HRSA Health Center Program",
+  "totalCenters": 7
+}

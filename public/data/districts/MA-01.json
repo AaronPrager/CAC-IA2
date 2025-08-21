@@ -1,0 +1,101 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "MA-01",
+  "name": "Massachusetts 1",
+  "state": "MA",
+  "member": "Rep. Richard Neal",
+  "metrics": {
+    "access_proximity": 44,
+    "coverage_friction": 26,
+    "availability": 60,
+    "price_pressure": 68,
+    "risk_score": 44
+  },
+  "drivers": [
+    "Recent list-price pressure"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.mass.gov/topics/masshealth",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 2354 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-22"
+    },
+    {
+      "type": "press",
+      "title": "Local clinic expands insulin program",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-25"
+    },
+    {
+      "type": "press",
+      "title": "Bipartisan roundtable on drug access",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-11"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "MA-01 Site 1",
+      "lat": 45.311,
+      "lon": -101.6159
+    },
+    {
+      "site_type": "CHC",
+      "name": "MA-01 Site 2",
+      "lat": 25.5382,
+      "lon": -104.7169
+    },
+    {
+      "site_type": "CHC",
+      "name": "MA-01 Site 3",
+      "lat": 45.9392,
+      "lon": -77.3389
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

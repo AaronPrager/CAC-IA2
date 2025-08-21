@@ -1,140 +1,156 @@
 {
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
   "alerts": [
     {
       "id": "1",
-      "title": "Population Data Update",
-      "message": "New census data available for MA-04 district",
+      "title": "Insulin Access Risk Increased",
+      "message": "AZ-01 district shows 27% increase in insulin access risk factors",
       "severity": "warning",
-      "source": "census",
-      "districtId": "MA-04",
-      "timestamp": "2024-01-15T08:30:00Z",
+      "source": "health",
+      "districtId": "AZ-01",
+      "timestamp": "2025-08-17T10:30:00Z",
       "status": "active",
-      "metadata": {
-        "dataType": "population",
-        "changePercent": 2.3,
-        "previousValue": 718456,
-        "newValue": 734823
-      }
+      "prev": 44,
+      "next": 56,
+      "change": 12,
+      "changePercent": 27.3,
+      "changeDirection": "up"
     },
     {
       "id": "2",
-      "title": "Economic Indicators",
-      "message": "Q3 economic data published for CA-16",
+      "title": "Pharmacy Access Improved",
+      "message": "CA-01 district pharmacy access improved by 17%",
       "severity": "info",
-      "source": "economic",
-      "districtId": "CA-16",
-      "timestamp": "2024-01-15T06:15:00Z",
+      "source": "health",
+      "districtId": "CA-01",
+      "timestamp": "2025-08-17T14:20:00Z",
       "status": "active",
-      "metadata": {
-        "dataType": "economic",
-        "gdpGrowth": 3.2,
-        "unemploymentRate": 4.1,
-        "medianIncome": 125000
-      }
+      "prev": 70,
+      "next": 58,
+      "change": -12,
+      "changePercent": -17.1,
+      "changeDirection": "down"
     },
     {
       "id": "3",
-      "title": "Critical Infrastructure Alert",
-      "message": "Road construction project affecting GA-07",
+      "title": "FDA Shortage Alert",
+      "message": "FL-02 district experiencing insulin supply issues",
       "severity": "critical",
-      "source": "infrastructure",
-      "districtId": "GA-07",
-      "timestamp": "2024-01-14T14:20:00Z",
+      "source": "supply_chain",
+      "districtId": "FL-02",
+      "timestamp": "2025-08-17T09:15:00Z",
       "status": "active",
-      "metadata": {
-        "dataType": "infrastructure",
-        "projectType": "road_construction",
-        "duration": "6 months",
-        "affectedArea": "northeast_sector"
-      }
+      "prev": 45,
+      "next": 57,
+      "change": 12,
+      "changePercent": 26.7,
+      "changeDirection": "up"
     },
     {
       "id": "4",
-      "title": "Demographic Changes",
-      "message": "Significant population shift detected in TX-23",
-      "severity": "warning",
-      "source": "demographic",
-      "districtId": "TX-23",
-      "timestamp": "2024-01-13T16:45:00Z",
+      "title": "New Health Center Added",
+      "message": "GA-02 district gains new CHC site, improving access",
+      "severity": "info",
+      "source": "health",
+      "districtId": "GA-02",
+      "timestamp": "2025-08-17T16:45:00Z",
       "status": "active",
-      "metadata": {
-        "dataType": "demographic",
-        "changeType": "population_shift",
-        "affectedDemographics": ["age_25_34", "college_educated"],
-        "migrationSource": "urban_areas"
-      }
+      "prev": 62,
+      "next": 50,
+      "change": -12,
+      "changePercent": -19.4,
+      "changeDirection": "down"
     },
     {
       "id": "5",
-      "title": "Education Metrics",
-      "message": "School performance data updated for NY-12",
+      "title": "Coverage Friction Reduced",
+      "message": "GA-03 district insurance barriers decreased",
       "severity": "info",
-      "source": "education",
-      "districtId": "NY-12",
-      "timestamp": "2024-01-12T11:30:00Z",
-      "status": "resolved",
-      "metadata": {
-        "dataType": "education",
-        "graduationRate": 89.2,
-        "testScores": 78.5,
-        "teacherRatio": 18.2
-      }
+      "source": "policy",
+      "districtId": "GA-03",
+      "timestamp": "2025-08-17T11:30:00Z",
+      "status": "active",
+      "prev": 55,
+      "next": 43,
+      "change": -12,
+      "changePercent": -21.8,
+      "changeDirection": "down"
     },
     {
       "id": "6",
-      "title": "Healthcare Access",
-      "message": "New medical facility opening in FL-18",
-      "severity": "info",
-      "source": "health",
-      "districtId": "FL-18",
-      "timestamp": "2024-01-10T09:15:00Z",
-      "status": "resolved",
-      "metadata": {
-        "dataType": "health",
-        "facilityType": "urgent_care",
-        "location": "central_district",
-        "expectedOpening": "2024-03-01"
-      }
+      "title": "Critical Risk Alert",
+      "message": "GA-07 district risk level elevated",
+      "severity": "critical",
+      "source": "risk_assessment",
+      "districtId": "GA-07",
+      "timestamp": "2025-08-17T13:15:00Z",
+      "status": "active",
+      "prev": 71,
+      "next": 59,
+      "change": -12,
+      "changePercent": -16.9,
+      "changeDirection": "down"
     },
     {
       "id": "7",
-      "title": "Election Data Update",
-      "message": "Voter registration numbers updated for MA-04",
+      "title": "Diabetes Prevalence Stable",
+      "message": "NC-02 district diabetes rates remain unchanged",
       "severity": "info",
-      "source": "election",
-      "districtId": "MA-04",
-      "timestamp": "2024-01-14T10:00:00Z",
-      "status": "active",
-      "metadata": {
-        "dataType": "election",
-        "registeredVoters": 456789,
-        "changeFromPrevious": 2345,
-        "lastElection": "2022"
-      }
+      "source": "health",
+      "districtId": "NC-02",
+      "timestamp": "2025-08-17T12:00:00Z",
+      "status": "resolved",
+      "prev": 66,
+      "next": 54,
+      "change": -12,
+      "changePercent": -18.2,
+      "changeDirection": "down"
     },
     {
       "id": "8",
-      "title": "Economic Warning",
-      "message": "Unemployment rate increase detected in GA-07",
+      "title": "Price Pressure Warning",
+      "message": "CA-16 district experiencing insulin cost increases",
       "severity": "warning",
       "source": "economic",
-      "districtId": "GA-07",
-      "timestamp": "2024-01-13T13:20:00Z",
+      "districtId": "CA-16",
+      "timestamp": "2025-08-17T15:30:00Z",
       "status": "active",
-      "metadata": {
-        "dataType": "economic",
-        "unemploymentRate": 6.8,
-        "previousRate": 5.9,
-        "changePercent": 15.3
-      }
+      "prev": 65,
+      "next": 54,
+      "change": -11,
+      "changePercent": -16.9,
+      "changeDirection": "down"
+    },
+    {
+      "id": "9",
+      "title": "Transportation Access Improved",
+      "message": "WA-01 district medical transport services expanded",
+      "severity": "info",
+      "source": "infrastructure",
+      "districtId": "WA-01",
+      "timestamp": "2025-08-17T10:00:00Z",
+      "status": "active",
+      "prev": 72,
+      "next": 61,
+      "change": -11,
+      "changePercent": -15.3,
+      "changeDirection": "down"
+    },
+    {
+      "id": "10",
+      "title": "Manufacturer Assistance Available",
+      "message": "CA-02 district gains access to new patient assistance programs",
+      "severity": "info",
+      "source": "pharmaceutical",
+      "districtId": "CA-02",
+      "timestamp": "2025-08-17T14:45:00Z",
+      "status": "active",
+      "prev": 59,
+      "next": 49,
+      "change": -10,
+      "changePercent": -16.9,
+      "changeDirection": "down"
     }
-  ],
-  "metadata": {
-    "totalAlerts": 8,
-    "activeAlerts": 6,
-    "resolvedAlerts": 2,
-    "lastUpdated": "2024-01-15T12:00:00Z",
-    "dataSource": "Multiple sources",
-    "version": "1.0.0"
-  }
+  ]
 }

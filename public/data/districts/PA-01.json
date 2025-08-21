@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "PA-01",
+  "name": "Pennsylvania 1",
+  "state": "PA",
+  "member": "Rep. Brian Fitzpatrick",
+  "metrics": {
+    "access_proximity": 47,
+    "coverage_friction": 31,
+    "availability": 35,
+    "price_pressure": 27,
+    "risk_score": 38
+  },
+  "drivers": [
+    "Below-median site density"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.dhs.pa.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 7704 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-15"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 4956 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-16"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 4557 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-10"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "PA-01 Site 1",
+      "lat": 33.3958,
+      "lon": -110.0683
+    },
+    {
+      "site_type": "CHC",
+      "name": "PA-01 Site 2",
+      "lat": 42.7814,
+      "lon": -79.6508
+    },
+    {
+      "site_type": "CHC",
+      "name": "PA-01 Site 3",
+      "lat": 46.1173,
+      "lon": -72.3361
+    },
+    {
+      "site_type": "340B",
+      "name": "PA-01 Site 4",
+      "lat": 35.317,
+      "lon": -118.1281
+    },
+    {
+      "site_type": "CHC",
+      "name": "PA-01 Site 5",
+      "lat": 42.7805,
+      "lon": -109.4436
+    },
+    {
+      "site_type": "340B",
+      "name": "PA-01 Site 6",
+      "lat": 47.7547,
+      "lon": -106.4621
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

@@ -1,117 +1,101 @@
 {
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
   "id": "MA-04",
-  "name": "Massachusetts 4th District",
-  "state": "Massachusetts",
-  "stateCode": "MA",
-  "population": 734823,
-  "area": 325,
-  "coordinates": [42.3601, -71.0589],
-  "bounds": [[42.2, -71.2], [42.5, -70.9]],
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [[
-      [-71.2, 42.2],
-      [-70.9, 42.2],
-      [-70.9, 42.5],
-      [-71.2, 42.5],
-      [-71.2, 42.2]
-    ]]
+  "name": "Massachusetts 4",
+  "state": "MA",
+  "member": "Rep. Jake Auchincloss",
+  "metrics": {
+    "access_proximity": 52,
+    "coverage_friction": 23,
+    "availability": 71,
+    "price_pressure": 39,
+    "risk_score": 46
   },
-  "insulinAccessRisk": {
-    "riskLevel": "medium",
-    "riskScore": 65,
-    "factors": {
-      "uninsuredRate": 8.2,
-      "diabetesPrevalence": 9.1,
-      "pharmacyAccess": 78,
-      "incomeLevel": 125000,
-      "ruralAccess": 25
-    },
-    "lastUpdated": "2024-01-15T12:00:00Z"
+  "drivers": [
+    "Recent FDA shortage signal"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.mass.gov/topics/masshealth",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
   },
-  "representative": {
-    "name": "Jake Auchincloss",
-    "party": "Democratic",
-    "phone": "(202) 225-5931",
-    "email": "district4@mail.house.gov",
-    "officeAddress": "Washington, DC",
-    "committeeMemberships": ["Armed Services", "Transportation"],
-    "insulinVotingRecord": {
-      "supportForInsulinBills": 85,
-      "recentVotes": [
-        {
-          "bill": "HR 1234",
-          "vote": "yes",
-          "date": "2024-01-10"
-        }
-      ]
-    }
-  },
-  "legislativeLinks": [
+  "legislative_links": [
     {
-      "id": "1",
-      "title": "HR 1234: Insulin Affordability Act",
-      "url": "https://congress.gov/bill/118th-congress/house-bill/1234",
-      "status": "Introduced",
-      "impact": "Direct"
+      "type": "bill",
+      "title": "H.R. 5511 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-10"
     },
     {
-      "id": "2",
-      "title": "S 567: Pharmacy Access Bill",
-      "url": "https://congress.gov/bill/118th-congress/senate-bill/567",
-      "status": "In Committee",
-      "impact": "Indirect"
-    },
-    {
-      "id": "3",
-      "title": "HR 890: Diabetes Prevention Act",
-      "url": "https://congress.gov/bill/118th-congress/house-bill/890",
-      "status": "Passed House",
-      "impact": "Indirect"
+      "type": "bill",
+      "title": "H.R. 3001 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-27"
     }
   ],
   "sites": [
     {
-      "id": "1",
-      "name": "Census Bureau - District Profile",
-      "url": "https://data.census.gov/profile",
-      "type": "census",
-      "description": "Demographic and economic data for the district"
+      "site_type": "CHC",
+      "name": "MA-04 Site 1",
+      "lat": 38.4229,
+      "lon": -90.0003
     },
     {
-      "id": "2",
-      "name": "CDC Diabetes Atlas",
-      "url": "https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html",
-      "type": "health",
-      "description": "Diabetes prevalence and health indicators"
+      "site_type": "340B",
+      "name": "MA-04 Site 2",
+      "lat": 33.2407,
+      "lon": -85.0367
     },
     {
-      "id": "3",
-      "name": "BLS Economic Data",
-      "url": "https://www.bls.gov/eag/",
-      "type": "economic",
-      "description": "Employment and economic indicators"
+      "site_type": "CHC",
+      "name": "MA-04 Site 3",
+      "lat": 36.8784,
+      "lon": -113.3356
     },
     {
-      "id": "4",
-      "name": "HHS Health Resources",
-      "url": "https://data.hrsa.gov/",
-      "type": "health",
-      "description": "Healthcare access and provider data"
-    },
-    {
-      "id": "5",
-      "name": "USDA Rural Development",
-      "url": "https://www.rd.usda.gov/",
-      "type": "infrastructure",
-      "description": "Rural development and infrastructure data"
-    },
-    {
-      "id": "6",
-      "name": "Congress.gov District Info",
-      "url": "https://www.congress.gov/members",
-      "type": "legislation",
-      "description": "Representative information and voting records"
+      "site_type": "340B",
+      "name": "MA-04 Site 4",
+      "lat": 30.7247,
+      "lon": -89.7594
     }
-  ]
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
 }

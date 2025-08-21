@@ -14,63 +14,78 @@ interface DistrictData {
   id: string
   name: string
   state: string
-  population: number
-  area: number
-  insulinAccessRisk: {
-    riskLevel: 'low' | 'medium' | 'high' | 'critical'
-    riskScore: number
-    factors: {
-      uninsuredRate: number
-      diabetesPrevalence: number
-      pharmacyAccess: number
-      incomeLevel: number
-      ruralAccess: number
-    }
+  member: string
+  metrics: {
+    access_proximity: number
+    coverage_friction: number
+    availability: number
+    price_pressure: number
+    risk_score: number
   }
-  representative: {
-    name: string
-    party: string
-    phone: string
-    email: string
-    officeAddress: string
-    committeeMemberships: string[]
-    insulinVotingRecord: {
-      supportForInsulinBills: number
-      recentVotes: Array<{
-        bill: string
-        vote: 'yes' | 'no' | 'abstain'
-        date: string
-      }>
-    }
+  drivers: string[]
+  resources: {
+    hrsa_clinic_finder: string
+    state_medicaid_info: string
+    manufacturer_assistance: Array<{
+      name: string
+      url: string
+    }>
   }
-  legislativeLinks: Array<{
-    id: string
+  legislative_links: Array<{
+    type: string
     title: string
     url: string
-    status: string
-    impact: string
+    date: string
   }>
   sites: Array<{
-    id: string
+    site_type: string
     name: string
-    url: string
-    type: string
-    description: string
+    lat: number
+    lon: number
   }>
+  provenance: {
+    sources: Array<{
+      name: string
+      url: string
+      last_pull: string
+    }>
+    notes: string
+  }
 }
 
 export default function DistrictDrawer({ districtId, onClose }: DistrictDrawerProps) {
   const [districtData, setDistrictData] = useState<DistrictData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  // Debug logging
+  console.log('DistrictDrawer render:', { districtId, districtData, loading, error, isVisible })
+
+  // Component mount/unmount logging
+  useEffect(() => {
+    console.log('DistrictDrawer mounted with districtId:', districtId)
+    return () => {
+      console.log('DistrictDrawer unmounting for districtId:', districtId)
+    }
+  }, [districtId])
 
   useEffect(() => {
+    console.log('DistrictDrawer useEffect triggered with districtId:', districtId)
+    
     if (!districtId) {
+      console.log('No districtId, clearing data and hiding')
       setDistrictData(null)
+      setIsVisible(false)
       return
     }
 
+    // Set visible immediately when we have a districtId
+    console.log('Setting drawer visible for district:', districtId)
+    setIsVisible(true)
+
     const fetchDistrictData = async () => {
+      console.log('Fetching data for district:', districtId)
       setLoading(true)
       setError(null)
       
@@ -81,6 +96,7 @@ export default function DistrictDrawer({ districtId, onClose }: DistrictDrawerPr
         }
         
         const data = await response.json()
+        console.log('Fetched district data:', data)
         setDistrictData(data)
       } catch (err) {
         console.error('Error fetching district data:', err)
@@ -91,106 +107,75 @@ export default function DistrictDrawer({ districtId, onClose }: DistrictDrawerPr
           id: districtId,
           name: `${districtId} District`,
           state: districtId.split('-')[0],
-          population: Math.floor(Math.random() * 800000) + 200000,
-          area: Math.floor(Math.random() * 500) + 100,
-          insulinAccessRisk: {
-            riskLevel: ['low', 'medium', 'high', 'critical'][Math.floor(Math.random() * 4)] as 'low' | 'medium' | 'high' | 'critical',
-            riskScore: Math.floor(Math.random() * 60) + 20,
-            factors: {
-              uninsuredRate: Math.floor(Math.random() * 20) + 5,
-              diabetesPrevalence: Math.floor(Math.random() * 15) + 8,
-              pharmacyAccess: Math.floor(Math.random() * 30) + 60,
-              incomeLevel: Math.floor(Math.random() * 50000) + 50000,
-              ruralAccess: Math.floor(Math.random() * 40) + 20
-            }
+          member: `Rep. ${['Smith', 'Johnson', 'Williams', 'Brown', 'Jones'][Math.floor(Math.random() * 5)]}`,
+          metrics: {
+            access_proximity: Math.floor(Math.random() * 60) + 20,
+            coverage_friction: Math.floor(Math.random() * 60) + 20,
+            availability: Math.floor(Math.random() * 60) + 20,
+            price_pressure: Math.floor(Math.random() * 60) + 20,
+            risk_score: Math.floor(Math.random() * 60) + 20
           },
-          representative: {
-            name: `Rep. ${['Smith', 'Johnson', 'Williams', 'Brown', 'Jones'][Math.floor(Math.random() * 5)]}`,
-            party: ['Democratic', 'Republican'][Math.floor(Math.random() * 2)],
-            phone: `(202) 225-${Math.floor(Math.random() * 9000) + 1000}`,
-            email: `district${districtId.split('-')[1]}@mail.house.gov`,
-            officeAddress: 'Washington, DC',
-            committeeMemberships: ['Armed Services', 'Transportation'],
-            insulinVotingRecord: {
-              supportForInsulinBills: Math.floor(Math.random() * 40) + 60,
-              recentVotes: [
-                {
-                  bill: 'HR 1234',
-                  vote: 'yes',
-                  date: '2024-01-10'
-                }
-              ]
-            }
+          drivers: ['Recent FDA shortage signal', 'Longer travel to dispensing sites'],
+          resources: {
+            hrsa_clinic_finder: 'https://findahealthcenter.hrsa.gov/',
+            state_medicaid_info: 'https://www.medicaid.gov/',
+            manufacturer_assistance: [
+              {
+                name: 'Lilly Insulin Value Program',
+                url: 'https://www.lilly.com/insulin'
+              },
+              {
+                name: 'NovoCare',
+                url: 'https://www.novocare.com/'
+              }
+            ]
           },
-          legislativeLinks: [
+          legislative_links: [
             {
-              id: '1',
-              title: 'HR 1234: Insulin Affordability Act',
-              url: 'https://congress.gov/bill/118th-congress/house-bill/1234',
-              status: 'Introduced',
-              impact: 'Direct'
+              type: 'bill',
+              title: 'H.R. 1234 — Insulin Affordability Act',
+              url: 'https://www.congress.gov/',
+              date: '2025-07-10'
             },
             {
-              id: '2',
-              title: 'S 567: Pharmacy Access Bill',
-              url: 'https://congress.gov/bill/118th-congress/senate-bill/567',
-              status: 'In Committee',
-              impact: 'Indirect'
-            },
-            {
-              id: '3',
-              title: 'HR 890: Diabetes Prevention Act',
-              url: 'https://congress.gov/bill/118th-congress/house-bill/890',
-              status: 'Passed House',
-              impact: 'Indirect'
+              type: 'bill',
+              title: 'H.R. 5678 — Essential Medicines Access Act',
+              url: 'https://www.congress.gov/',
+              date: '2025-07-15'
             }
           ],
           sites: [
             {
-              id: '1',
-              name: 'Census Bureau - District Profile',
-              url: 'https://data.census.gov/profile',
-              type: 'census',
-              description: 'Demographic and economic data for the district'
+              site_type: 'CHC',
+              name: `${districtId} Site 1`,
+              lat: 39.8283 + (Math.random() - 0.5) * 10,
+              lon: -98.5795 + (Math.random() - 0.5) * 10
             },
             {
-              id: '2',
-              name: 'CDC Diabetes Atlas',
-              url: 'https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html',
-              type: 'health',
-              description: 'Diabetes prevalence and health indicators'
-            },
-            {
-              id: '3',
-              name: 'BLS Economic Data',
-              url: 'https://www.bls.gov/eag/',
-              type: 'economic',
-              description: 'Employment and economic indicators'
-            },
-            {
-              id: '4',
-              name: 'HHS Health Resources',
-              url: 'https://data.hrsa.gov/',
-              type: 'health',
-              description: 'Healthcare access and provider data'
-            },
-            {
-              id: '5',
-              name: 'USDA Rural Development',
-              url: 'https://www.rd.usda.gov/',
-              type: 'infrastructure',
-              description: 'Rural development and infrastructure data'
-            },
-            {
-              id: '6',
-              name: 'Congress.gov District Info',
-              url: 'https://www.congress.gov/members',
-              type: 'legislation',
-              description: 'Representative information and voting records'
+              site_type: '340B',
+              name: `${districtId} Site 2`,
+              lat: 39.8283 + (Math.random() - 0.5) * 10,
+              lon: -98.5795 + (Math.random() - 0.5) * 10
             }
-          ]
+          ],
+          provenance: {
+            sources: [
+              {
+                name: 'HRSA Service Delivery Sites',
+                url: 'https://data.hrsa.gov/',
+                last_pull: '2025-08-10'
+              },
+              {
+                name: '340B OPAIS Daily Report',
+                url: 'https://www.hrsa.gov/opa',
+                last_pull: '2025-08-10'
+              }
+            ],
+            notes: 'Demo metrics only.'
+          }
         }
         
+        console.log('Using mock data:', mockData)
         setDistrictData(mockData)
       } finally {
         setLoading(false)
@@ -199,6 +184,56 @@ export default function DistrictDrawer({ districtId, onClose }: DistrictDrawerPr
 
     fetchDistrictData()
   }, [districtId])
+
+  // Don't render if no districtId
+  if (!districtId) {
+    console.log('DistrictDrawer: No districtId, rendering hidden drawer')
+    return (
+      <div className="fixed inset-y-0 right-0 w-96 bg-white shadow-xl border-l border-gray-200 transform translate-x-full transition-transform duration-300 ease-in-out z-[9999] district-drawer">
+        {/* Hidden drawer - don't unmount */}
+      </div>
+    )
+  }
+
+  // Don't render if we're not visible yet
+  if (!isVisible) {
+    console.log('DistrictDrawer: Not visible yet, rendering hidden drawer')
+    return (
+      <div className="fixed inset-y-0 right-0 w-96 bg-white shadow-xl border-l border-gray-200 transform translate-x-full transition-transform duration-300 ease-in-out z-[9999] district-drawer">
+        {/* Hidden drawer - don't unmount */}
+      </div>
+    )
+  }
+
+  // Don't render if we don't have data yet and not loading
+  if (!districtData && !loading) {
+    console.log('DistrictDrawer: No data and not loading, rendering loading state')
+    return (
+      <div className="fixed inset-y-0 right-0 w-96 bg-white shadow-xl border-l border-gray-200 transform transition-transform duration-300 ease-in-out z-[9999] district-drawer">
+        <div className="h-full flex flex-col">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center">
+              <MapPin className="h-6 w-6 text-primary-600 mr-3" />
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900">Loading...</h2>
+              </div>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto p-6">
+            <div className="flex items-center justify-center h-32">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   const generatePDF = async () => {
     if (!districtData) return
@@ -225,10 +260,8 @@ export default function DistrictDrawer({ districtId, onClose }: DistrictDrawerPr
     }
   }
 
-  if (!districtId) return null
-
   return (
-    <div className="fixed inset-y-0 right-0 w-96 bg-white shadow-xl border-l border-gray-200 transform transition-transform duration-300 ease-in-out z-50">
+    <div className="fixed inset-y-0 right-0 w-96 bg-white shadow-xl border-l border-gray-200 transform translate-x-0 transition-transform duration-300 ease-in-out z-[9999] district-drawer">
       <div className="h-full flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
@@ -275,128 +308,188 @@ export default function DistrictDrawer({ districtId, onClose }: DistrictDrawerPr
             </div>
           )}
 
-          {districtData && (
+          {!loading && !error && districtData && (
             <div className="space-y-6">
               {/* Basic Info */}
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="text-sm font-medium text-gray-700 mb-2">District Information</h3>
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div>
-                    <span className="text-gray-600">Population:</span>
-                    <span className="ml-2 font-medium">{districtData.population.toLocaleString()}</span>
-                  </div>
-                  <div>
-                    <span className="text-gray-600">Area:</span>
-                    <span className="ml-2 font-medium">{districtData.area} sq mi</span>
+              {districtData?.member && districtData?.state && (
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="text-sm font-medium text-gray-700 mb-2">District Information</h3>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <span className="text-gray-600">Member:</span>
+                      <span className="ml-2 font-medium">{districtData.member}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">State:</span>
+                      <span className="ml-2 font-medium">{districtData.state}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
+
+              {!districtData?.member || !districtData?.state ? (
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                  <div className="flex items-center">
+                    <AlertTriangle className="h-5 w-5 text-yellow-400 mr-2" />
+                    <span className="text-sm font-medium text-yellow-800">Incomplete District Data</span>
+                  </div>
+                  <p className="text-sm text-yellow-600 mt-1">
+                    Some district information is missing. Please check the data source.
+                  </p>
+                </div>
+              ) : null}
 
               {/* Risk Assessment */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <AlertTriangle className="h-5 w-5 text-primary-600 mr-2" />
-                  Insulin Access Risk Assessment
-                </h3>
-                <ScoreBars 
-                  scores={districtData.insulinAccessRisk.factors}
-                  overallRisk={districtData.insulinAccessRisk.riskScore}
-                />
-              </div>
+              {districtData?.metrics && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                    <AlertTriangle className="h-5 w-5 text-primary-600 mr-2" />
+                    Insulin Access Risk Assessment
+                  </h3>
+                  <ScoreBars 
+                    scores={{
+                      'Access Proximity': districtData.metrics.access_proximity,
+                      'Coverage Friction': districtData.metrics.coverage_friction,
+                      'Availability': districtData.metrics.availability,
+                      'Price Pressure': districtData.metrics.price_pressure
+                    }}
+                    overallRisk={districtData.metrics.risk_score}
+                  />
+                </div>
+              )}
 
-              {/* Representative Information */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <Users className="h-5 w-5 text-primary-600 mr-2" />
-                  Representative Information
-                </h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                  <div className="mb-3">
-                    <p className="font-medium text-gray-900">{districtData.representative.name}</p>
-                    <p className="text-sm text-gray-600">{districtData.representative.party}</p>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 text-gray-400 mr-2" />
-                      <span>{districtData.representative.phone}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Mail className="h-4 w-4 text-gray-400 mr-2" />
-                      <span>{districtData.representative.email}</span>
-                    </div>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Insulin Bill Support:</span>
-                      <span className="text-sm font-medium text-gray-900">{districtData.representative.insulinVotingRecord.supportForInsulinBills}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
-                      <div className="h-2 rounded-full bg-primary-500" style={{ width: `${districtData.representative.insulinVotingRecord.supportForInsulinBills}%` }}></div>
+              {/* Risk Drivers */}
+              {districtData?.drivers && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                    <AlertTriangle className="h-5 w-5 text-primary-600 mr-2" />
+                    Risk Drivers
+                  </h3>
+                  <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                    <div className="space-y-2">
+                      {districtData.drivers.map((driver, index) => (
+                        <div key={index} className="flex items-center text-sm">
+                          <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                          <span className="text-gray-700">{driver}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Legislative Links */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <FileText className="h-5 w-5 text-primary-600 mr-2" />
-                  Legislative Links
-                </h3>
-                <div className="space-y-3">
-                  {districtData.legislativeLinks.map(legislation => (
-                    <div key={legislation.id} className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <a 
-                            href={legislation.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline"
-                          >
-                            {legislation.title}
-                          </a>
-                          <p className="text-xs text-gray-500 mt-1">Status: {legislation.status}</p>
+              {districtData?.legislative_links && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                    <FileText className="h-5 w-5 text-primary-600 mr-2" />
+                    Legislative Links
+                  </h3>
+                  <div className="space-y-3">
+                    {districtData.legislative_links.map((legislation, index) => (
+                      <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="flex-1">
+                            <a 
+                              href={legislation.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline"
+                            >
+                              {legislation.title}
+                            </a>
+                            <p className="text-xs text-gray-500 mt-1">Type: {legislation.type} • Date: {legislation.date}</p>
+                          </div>
+                          <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
+                            legislation.type === 'bill' ? 'bg-blue-100 text-blue-800' :
+                            'bg-green-100 text-green-800'
+                          }`}>
+                            {legislation.type}
+                          </span>
                         </div>
-                        <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
-                          legislation.impact === 'Direct' ? 'bg-red-100 text-red-800' :
-                          'bg-yellow-100 text-yellow-800'
-                        }`}>
-                          {legislation.impact}
-                        </span>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Sites */}
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                  <MapPin className="h-5 w-5 text-primary-600 mr-2" />
-                  Data Sources & Sites
-                </h3>
-                <div className="space-y-3">
-                  {districtData.sites.map(site => (
-                    <div key={site.id} className="p-3 bg-gray-50 rounded-lg">
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex-1">
-                          <a 
-                            href={site.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline"
-                          >
-                            {site.name}
-                          </a>
-                          <p className="text-xs text-gray-600 mt-1">{site.description}</p>
+              {districtData?.sites && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                    <MapPin className="h-5 w-5 text-primary-600 mr-2" />
+                    Data Sources & Sites
+                  </h3>
+                  <div className="space-y-3">
+                    {districtData.sites.map((site, index) => (
+                      <div key={index} className="p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-gray-900">
+                              {site.name}
+                            </p>
+                            <p className="text-xs text-gray-500 mt-1">
+                              {site.site_type} • Lat: {site.lat.toFixed(4)}, Lon: {site.lon.toFixed(4)}
+                            </p>
+                          </div>
+                          <SourceBadge type={site.site_type} size="sm" />
                         </div>
-                        <SourceBadge type={site.type} size="sm" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Resources */}
+              {districtData?.resources && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                    <Users className="h-5 w-5 text-primary-600 mr-2" />
+                    Resources & Assistance
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-gray-50 rounded-lg">
+                      <div className="space-y-2">
+                        <a 
+                          href={districtData.resources.hrsa_clinic_finder}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline block"
+                        >
+                          Find HRSA Health Centers
+                        </a>
+                        <a 
+                          href={districtData.resources.state_medicaid_info}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline block"
+                        >
+                          State Medicaid Information
+                        </a>
                       </div>
                     </div>
-                  ))}
+                    
+                    {districtData.resources.manufacturer_assistance && (
+                      <div className="p-3 bg-gray-50 rounded-lg">
+                        <h4 className="text-sm font-medium text-gray-700 mb-2">Manufacturer Assistance Programs</h4>
+                        <div className="space-y-2">
+                          {districtData.resources.manufacturer_assistance.map((program, index) => (
+                            <a 
+                              key={index}
+                              href={program.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline block"
+                            >
+                              {program.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           )}
         </div>

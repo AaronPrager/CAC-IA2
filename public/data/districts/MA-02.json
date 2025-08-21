@@ -1,0 +1,108 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "MA-02",
+  "name": "Massachusetts 2",
+  "state": "MA",
+  "member": "Rep. Jim McGovern",
+  "metrics": {
+    "access_proximity": 46,
+    "coverage_friction": 72,
+    "availability": 62,
+    "price_pressure": 76,
+    "risk_score": 60
+  },
+  "drivers": [
+    "Weak or no copay cap",
+    "Recent list-price pressure"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.mass.gov/topics/masshealth",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "press",
+      "title": "Member statement on insulin pricing",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-26"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 6132 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-22"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "MA-02 Site 1",
+      "lat": 27.9392,
+      "lon": -117.5143
+    },
+    {
+      "site_type": "340B",
+      "name": "MA-02 Site 2",
+      "lat": 29.2763,
+      "lon": -98.0667
+    },
+    {
+      "site_type": "340B",
+      "name": "MA-02 Site 3",
+      "lat": 28.2406,
+      "lon": -97.8622
+    },
+    {
+      "site_type": "340B",
+      "name": "MA-02 Site 4",
+      "lat": 30.0472,
+      "lon": -91.8702
+    },
+    {
+      "site_type": "CHC",
+      "name": "MA-02 Site 5",
+      "lat": 31.4704,
+      "lon": -103.7049
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

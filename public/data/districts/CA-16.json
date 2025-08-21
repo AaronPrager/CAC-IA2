@@ -1,117 +1,113 @@
 {
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
   "id": "CA-16",
-  "name": "California 16th District",
-  "state": "California",
-  "stateCode": "CA",
-  "population": 761387,
-  "area": 412,
-  "coordinates": [37.3382, -121.8863],
-  "bounds": [[37.2, -122.0], [37.5, -121.7]],
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [[
-      [-122.0, 37.2],
-      [-121.7, 37.2],
-      [-121.7, 37.5],
-      [-122.0, 37.5],
-      [-122.0, 37.2]
-    ]]
+  "name": "California 16",
+  "state": "CA",
+  "member": "Rep. Anna Eshoo",
+  "metrics": {
+    "access_proximity": 75,
+    "coverage_friction": 24,
+    "availability": 63,
+    "price_pressure": 46,
+    "risk_score": 54
   },
-  "insulinAccessRisk": {
-    "riskLevel": "low",
-    "riskScore": 35,
-    "factors": {
-      "uninsuredRate": 6.1,
-      "diabetesPrevalence": 7.8,
-      "pharmacyAccess": 95,
-      "incomeLevel": 145000,
-      "ruralAccess": 15
-    },
-    "lastUpdated": "2024-01-15T12:00:00Z"
+  "drivers": [
+    "Longer travel to dispensing sites"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.dhcs.ca.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
   },
-  "representative": {
-    "name": "Anna Eshoo",
-    "party": "Democratic",
-    "phone": "(202) 225-8104",
-    "email": "district16@mail.house.gov",
-    "officeAddress": "Washington, DC",
-    "committeeMemberships": ["Energy and Commerce", "Intelligence"],
-    "insulinVotingRecord": {
-      "supportForInsulinBills": 92,
-      "recentVotes": [
-        {
-          "bill": "HR 1234",
-          "vote": "yes",
-          "date": "2024-01-10"
-        }
-      ]
-    }
-  },
-  "legislativeLinks": [
+  "legislative_links": [
     {
-      "id": "1",
-      "title": "HR 1234: Insulin Affordability Act",
-      "url": "https://congress.gov/bill/118th-congress/house-bill/1234",
-      "status": "Introduced",
-      "impact": "Direct"
+      "type": "bill",
+      "title": "H.R. 5611 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-15"
     },
     {
-      "id": "2",
-      "title": "S 567: Pharmacy Access Bill",
-      "url": "https://congress.gov/bill/118th-congress/senate-bill/567",
-      "status": "In Committee",
-      "impact": "Indirect"
+      "type": "press",
+      "title": "Bipartisan roundtable on drug access",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-13"
     },
     {
-      "id": "3",
-      "title": "HR 890: Diabetes Prevention Act",
-      "url": "https://congress.gov/bill/118th-congress/house-bill/890",
-      "status": "Passed House",
-      "impact": "Indirect"
+      "type": "bill",
+      "title": "H.R. 8768 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-16"
     }
   ],
   "sites": [
     {
-      "id": "1",
-      "name": "Census Bureau - District Profile",
-      "url": "https://data.census.gov/profile",
-      "type": "census",
-      "description": "Demographic and economic data for the district"
+      "site_type": "CHC",
+      "name": "CA-16 Site 1",
+      "lat": 38.4453,
+      "lon": -120.9992
     },
     {
-      "id": "2",
-      "name": "CDC Diabetes Atlas",
-      "url": "https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html",
-      "type": "health",
-      "description": "Diabetes prevalence and health indicators"
+      "site_type": "340B",
+      "name": "CA-16 Site 2",
+      "lat": 39.5069,
+      "lon": -111.1878
     },
     {
-      "id": "3",
-      "name": "BLS Economic Data",
-      "url": "https://www.bls.gov/eag/",
-      "type": "economic",
-      "description": "Employment and economic indicators"
+      "site_type": "340B",
+      "name": "CA-16 Site 3",
+      "lat": 43.1365,
+      "lon": -79.6719
     },
     {
-      "id": "4",
-      "name": "HHS Health Resources",
-      "url": "https://data.hrsa.gov/",
-      "type": "health",
-      "description": "Healthcare access and provider data"
+      "site_type": "340B",
+      "name": "CA-16 Site 4",
+      "lat": 40.8845,
+      "lon": -107.5028
     },
     {
-      "id": "5",
-      "name": "USDA Rural Development",
-      "url": "https://www.rd.usda.gov/",
-      "type": "infrastructure",
-      "description": "Rural development and infrastructure data"
-    },
-    {
-      "id": "6",
-      "name": "Congress.gov District Info",
-      "url": "https://www.congress.gov/members",
-      "type": "legislation",
-      "description": "Representative information and voting records"
+      "site_type": "340B",
+      "name": "CA-16 Site 5",
+      "lat": 37.9591,
+      "lon": -74.6284
     }
-  ]
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
 }

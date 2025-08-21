@@ -1,0 +1,227 @@
+{
+  "serviceSites": [
+    {
+      "id": "SS-MA-001",
+      "healthCenterId": "HC-MA-001",
+      "name": "Cape Cod Health Center Pharmacy",
+      "type": "Pharmacy",
+      "address": {
+        "street": "107 Commercial Street",
+        "city": "Provincetown",
+        "state": "MA",
+        "zipCode": "02657",
+        "coordinates": [42.0587, -70.1787]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 8AM-6PM, Sat 9AM-1PM",
+      "phone": "(508) 487-9395",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-MA-002",
+      "healthCenterId": "HC-MA-002",
+      "name": "Martha's Vineyard Pharmacy Services",
+      "type": "Pharmacy",
+      "address": {
+        "street": "111 Edgartown Road",
+        "city": "Vineyard Haven",
+        "state": "MA",
+        "zipCode": "02568",
+        "coordinates": [41.4545, -70.5995]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": false
+      },
+      "hours": "Mon-Fri 8AM-5PM",
+      "phone": "(508) 693-7900",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-MA-003",
+      "healthCenterId": "HC-MA-003",
+      "name": "BHCHP Pharmacy",
+      "type": "Pharmacy",
+      "address": {
+        "street": "780 Albany Street",
+        "city": "Boston",
+        "state": "MA",
+        "zipCode": "02118",
+        "coordinates": [42.3601, -71.0589]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 7AM-7PM, Sat 8AM-4PM",
+      "phone": "(857) 654-1000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-MA-004",
+      "healthCenterId": "HC-MA-003",
+      "name": "BHCHP Diabetes Clinic",
+      "type": "Specialty Care",
+      "address": {
+        "street": "780 Albany Street",
+        "city": "Boston",
+        "state": "MA",
+        "zipCode": "02118",
+        "coordinates": [42.3601, -71.0589]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": false,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 8AM-5PM",
+      "phone": "(857) 654-1000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-CA-001",
+      "healthCenterId": "HC-CA-001",
+      "name": "Santa Clara Valley Pharmacy",
+      "type": "Pharmacy",
+      "address": {
+        "street": "751 S Bascom Ave",
+        "city": "San Jose",
+        "state": "CA",
+        "zipCode": "95128",
+        "coordinates": [37.3382, -121.8863]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": false
+      },
+      "hours": "Mon-Fri 7AM-7PM, Sat 8AM-4PM",
+      "phone": "(408) 885-5000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-CA-002",
+      "healthCenterId": "HC-CA-001",
+      "name": "SCVMC Diabetes Center",
+      "type": "Specialty Care",
+      "address": {
+        "street": "751 S Bascom Ave",
+        "city": "San Jose",
+        "state": "CA",
+        "zipCode": "95128",
+        "coordinates": [37.3382, -121.8863]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": false,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 8AM-5PM",
+      "phone": "(408) 885-5000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-CA-003",
+      "healthCenterId": "HC-CA-002",
+      "name": "Alameda Health Pharmacy",
+      "type": "Pharmacy",
+      "address": {
+        "street": "1411 E 31st Street",
+        "city": "Oakland",
+        "state": "CA",
+        "zipCode": "94602",
+        "coordinates": [37.7749, -122.2194]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 8AM-6PM, Sat 9AM-3PM",
+      "phone": "(510) 437-4800",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-GA-001",
+      "healthCenterId": "HC-GA-001",
+      "name": "Grady Health Pharmacy",
+      "type": "Pharmacy",
+      "address": {
+        "street": "80 Jesse Hill Jr Dr SE",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipCode": "30303",
+        "coordinates": [33.7490, -84.3880]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 8AM-8PM, Sat 9AM-5PM",
+      "phone": "(404) 616-1000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-GA-002",
+      "healthCenterId": "HC-GA-001",
+      "name": "Grady Diabetes Center",
+      "type": "Specialty Care",
+      "address": {
+        "street": "80 Jesse Hill Jr Dr SE",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipCode": "30303",
+        "coordinates": [33.7490, -84.3880]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": false,
+        "education": true,
+        "financialAssistance": true
+      },
+      "hours": "Mon-Fri 8AM-5PM",
+      "phone": "(404) 616-1000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    },
+    {
+      "id": "SS-GA-003",
+      "healthCenterId": "HC-GA-002",
+      "name": "Mercy Care Pharmacy",
+      "type": "Pharmacy",
+      "address": {
+        "street": "424 Decatur Street SE",
+        "city": "Atlanta",
+        "state": "GA",
+        "zipCode": "30312",
+        "coordinates": [33.7489, -84.3880]
+      },
+      "insulinServices": {
+        "prescription": true,
+        "dispensing": true,
+        "education": true,
+        "financialAssistance": false
+      },
+      "hours": "Mon-Fri 8AM-6PM, Sat 9AM-2PM",
+      "phone": "(404) 880-9000",
+      "lastUpdated": "2024-01-15T12:00:00Z"
+    }
+  ],
+  "lastUpdated": "2024-01-15T12:00:00Z",
+  "source": "HRSA Health Center Program",
+  "totalSites": 10
+}

@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "FL-02",
+  "name": "Florida 2",
+  "state": "FL",
+  "member": "Rep. Neal Dunn",
+  "metrics": {
+    "access_proximity": 55,
+    "coverage_friction": 71,
+    "availability": 26,
+    "price_pressure": 81,
+    "risk_score": 57
+  },
+  "drivers": [
+    "Weak or no copay cap",
+    "Recent list-price pressure"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://ahca.myflorida.com/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 4225 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-22"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 7579 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-22"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 7441 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-16"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "FL-02 Site 1",
+      "lat": 39.1044,
+      "lon": -115.0134
+    },
+    {
+      "site_type": "CHC",
+      "name": "FL-02 Site 2",
+      "lat": 26.5019,
+      "lon": -121.4122
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

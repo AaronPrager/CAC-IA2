@@ -14,7 +14,7 @@ export interface District {
 }
 
 export interface InsulinAccessRisk {
-  riskLevel: 'low' | 'medium' | 'high' | 'critical'
+  riskLevel: 'very_low' | 'low' | 'medium' | 'high' | 'critical'
   riskScore: number // 0-100
   factors: {
     uninsuredRate: number
@@ -22,6 +22,10 @@ export interface InsulinAccessRisk {
     pharmacyAccess: number
     incomeLevel: number
     ruralAccess: number
+    accessProximity: number // New: Distance to health centers
+    coverageFriction: number // New: Insurance barriers
+    availability: number // New: Drug supply availability
+    pricePressure: number // New: Cost burden
   }
   lastUpdated: string
 }
@@ -95,6 +99,141 @@ export interface ConstituentAction {
     description: string
   }>
   generatedAt: string
+}
+
+// Health Center and Service Site types
+export interface HealthCenter {
+  id: string
+  name: string
+  type: 'FQHC' | 'FQHC-Look-Alike' | 'RHC' | 'Other'
+  address: {
+    street: string
+    city: string
+    state: string
+    zipCode: string
+    coordinates: [number, number] // [latitude, longitude]
+  }
+  services: string[]
+  hours: string
+  phone: string
+  website?: string
+  lastUpdated: string
+}
+
+export interface ServiceSite {
+  id: string
+  healthCenterId: string
+  name: string
+  type: 'Primary Care' | 'Pharmacy' | 'Specialty Care' | 'Mental Health' | 'Dental'
+  address: {
+    street: string
+    city: string
+    state: string
+    zipCode: string
+    coordinates: [number, number]
+  }
+  insulinServices: {
+    prescription: boolean
+    dispensing: boolean
+    education: boolean
+    financialAssistance: boolean
+  }
+  hours: string
+  phone: string
+  lastUpdated: string
+}
+
+export interface AccessProximityData {
+  districtId: string
+  healthCenters: HealthCenter[]
+  serviceSites: ServiceSite[]
+  averageDistance: number // in miles
+  nearestCenter: HealthCenter
+  nearestPharmacy: ServiceSite
+  coverageScore: number // 0-100
+  lastUpdated: string
+}
+
+// 340B Contract Pharmacy types
+export interface ContractPharmacy {
+  id: string
+  name: string
+  type: '340B Contract Pharmacy' | 'Independent Pharmacy' | 'Chain Pharmacy'
+  address: {
+    street: string
+    city: string
+    state: string
+    zipCode: string
+    coordinates: [number, number]
+  }
+  coveredEntityId: string
+  coveredEntityName: string
+  services: string[]
+  hours: string
+  phone: string
+  lastUpdated: string
+}
+
+export interface PharmacyNetwork {
+  districtId: string
+  contractPharmacies: ContractPharmacy[]
+  totalPharmacies: number
+  averageDistance: number
+  networkDensityScore: number // 0-100, lower is better
+  nearestPharmacy: ContractPharmacy
+  lastUpdated: string
+}
+
+// Drug Shortage types
+export interface DrugShortage {
+  id: string
+  drugName: string
+  genericName: string
+  ndc: string
+  manufacturer: string
+  shortageStatus: 'current' | 'resolved' | 'anticipated'
+  reason: string
+  estimatedResupply: string
+  impact: 'high' | 'medium' | 'low'
+  affectedAreas: string[]
+  lastUpdated: string
+}
+
+export interface ShortageImpact {
+  districtId: string
+  totalShortages: number
+  currentShortages: number
+  insulinShortages: number
+  impactScore: number // 0-100, lower is better
+  affectedProducts: string[]
+  lastUpdated: string
+}
+
+// State Policy types
+export interface StatePolicy {
+  state: string
+  stateName: string
+  insulinCopayCap: {
+    amount: number
+    currency: string
+    period: string
+    effectiveDate: string
+    notes: string
+  }
+  additionalBenefits: string[]
+  coverageFriction: 'very_low' | 'low' | 'medium' | 'high' | 'very_high'
+  lastUpdated: string
+}
+
+export interface PolicyImpact {
+  districtId: string
+  stateCode: string
+  stateName: string
+  policy: StatePolicy | null
+  frictionScore: number // 0-100, lower is better
+  benefits: string[]
+  limitations: string[]
+  lastUpdated: string
 }
 
 // Alert-related types

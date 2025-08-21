@@ -1,0 +1,114 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "TX-02",
+  "name": "Texas 2",
+  "state": "TX",
+  "member": "Rep. Dan Crenshaw",
+  "metrics": {
+    "access_proximity": 72,
+    "coverage_friction": 69,
+    "availability": 30,
+    "price_pressure": 36,
+    "risk_score": 59
+  },
+  "drivers": [
+    "Weak or no copay cap",
+    "Longer travel to dispensing sites"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.hhs.texas.gov/services/health/medicaid-chip",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "press",
+      "title": "Local clinic expands insulin program",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-26"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 1435 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-16"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 2449 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-18"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "TX-02 Site 1",
+      "lat": 33.8269,
+      "lon": -98.0552
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-02 Site 2",
+      "lat": 38.444,
+      "lon": -91.8475
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-02 Site 3",
+      "lat": 37.202,
+      "lon": -80.7312
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-02 Site 4",
+      "lat": 38.3864,
+      "lon": -121.3979
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-02 Site 5",
+      "lat": 40.6335,
+      "lon": -73.0018
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

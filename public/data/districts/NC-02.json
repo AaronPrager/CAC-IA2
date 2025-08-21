@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "NC-02",
+  "name": "North Carolina 2",
+  "state": "NC",
+  "member": "Rep. Deborah Ross",
+  "metrics": {
+    "access_proximity": 49,
+    "coverage_friction": 66,
+    "availability": 51,
+    "price_pressure": 45,
+    "risk_score": 54
+  },
+  "drivers": [
+    "Weak or no copay cap"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://medicaid.ncdhhs.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 2081 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-23"
+    },
+    {
+      "type": "press",
+      "title": "Bipartisan roundtable on drug access",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-14"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "NC-02 Site 1",
+      "lat": 42.4162,
+      "lon": -121.2955
+    },
+    {
+      "site_type": "CHC",
+      "name": "NC-02 Site 2",
+      "lat": 46.0189,
+      "lon": -93.4615
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

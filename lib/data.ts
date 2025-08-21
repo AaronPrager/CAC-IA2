@@ -1,4 +1,5 @@
-import { District, DistrictScore, Alert, ApiResponse, PaginatedResponse } from './types'
+import { District, DistrictScore, Alert, ApiResponse, PaginatedResponse, AccessProximityData } from './types'
+import { fetchHealthCenterData } from './healthCenters'
 
 // Mock data for development
 const mockDistricts: District[] = [
@@ -29,7 +30,11 @@ const mockDistricts: District[] = [
         diabetesPrevalence: 9.1,
         pharmacyAccess: 78,
         incomeLevel: 125000,
-        ruralAccess: 25
+        ruralAccess: 25,
+        accessProximity: 45, // Distance to health centers (0-100, lower is better)
+        coverageFriction: 35, // Insurance barriers (0-100, lower is better)
+        availability: 25, // Drug supply availability (0-100, lower is better)
+        pricePressure: 55 // Cost burden (0-100, lower is better)
       },
       lastUpdated: '2024-01-15T12:00:00Z'
     },
@@ -79,7 +84,11 @@ const mockDistricts: District[] = [
         diabetesPrevalence: 7.8,
         pharmacyAccess: 95,
         incomeLevel: 145000,
-        ruralAccess: 15
+        ruralAccess: 15,
+        accessProximity: 25, // Distance to health centers (0-100, lower is better)
+        coverageFriction: 20, // Insurance barriers (0-100, lower is better)
+        availability: 15, // Drug supply availability (0-100, lower is better)
+        pricePressure: 30 // Cost burden (0-100, lower is better)
       },
       lastUpdated: '2024-01-15T12:00:00Z'
     },
@@ -129,7 +138,11 @@ const mockDistricts: District[] = [
         diabetesPrevalence: 12.3,
         pharmacyAccess: 65,
         incomeLevel: 85000,
-        ruralAccess: 45
+        ruralAccess: 45,
+        accessProximity: 65, // Distance to health centers (0-100, lower is better)
+        coverageFriction: 70, // Insurance barriers (0-100, lower is better)
+        availability: 55, // Drug supply availability (0-100, lower is better)
+        pricePressure: 75 // Cost burden (0-100, lower is better)
       },
       lastUpdated: '2024-01-15T12:00:00Z'
     },
@@ -410,4 +423,29 @@ export function getSeverityColor(severity: string): string {
     default:
       return 'text-gray-600 bg-gray-100'
   }
+}
+
+// Fetch health center data for a specific district
+export async function fetchDistrictHealthCenters(districtId: string): Promise<AccessProximityData | null> {
+  try {
+    return await fetchHealthCenterData(districtId)
+  } catch (error) {
+    console.error('Error fetching health center data:', error)
+    return null
+  }
+}
+
+// Fetch all health center data for all districts
+export async function fetchAllHealthCenterData(): Promise<AccessProximityData[]> {
+  const districts = ['MA-04', 'CA-16', 'GA-07']
+  const results: AccessProximityData[] = []
+  
+  for (const districtId of districts) {
+    const data = await fetchHealthCenterData(districtId)
+    if (data) {
+      results.push(data)
+    }
+  }
+  
+  return results
 }

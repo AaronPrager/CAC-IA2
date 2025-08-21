@@ -1,0 +1,113 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "CO-02",
+  "name": "Colorado 2",
+  "state": "CO",
+  "member": "Rep. Joe Neguse",
+  "metrics": {
+    "access_proximity": 62,
+    "coverage_friction": 50,
+    "availability": 38,
+    "price_pressure": 53,
+    "risk_score": 53
+  },
+  "drivers": [
+    "Below-median site density"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://hcpf.colorado.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "press",
+      "title": "Bipartisan roundtable on drug access",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-14"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 2042 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-23"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "CO-02 Site 1",
+      "lat": 37.1582,
+      "lon": -89.6887
+    },
+    {
+      "site_type": "340B",
+      "name": "CO-02 Site 2",
+      "lat": 34.605,
+      "lon": -91.0226
+    },
+    {
+      "site_type": "CHC",
+      "name": "CO-02 Site 3",
+      "lat": 25.3636,
+      "lon": -109.2902
+    },
+    {
+      "site_type": "CHC",
+      "name": "CO-02 Site 4",
+      "lat": 43.8955,
+      "lon": -81.2138
+    },
+    {
+      "site_type": "340B",
+      "name": "CO-02 Site 5",
+      "lat": 28.1428,
+      "lon": -116.8098
+    },
+    {
+      "site_type": "CHC",
+      "name": "CO-02 Site 6",
+      "lat": 38.7583,
+      "lon": -115.2451
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

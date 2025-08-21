@@ -46,12 +46,18 @@ export default function AlertsPage() {
     setError(null)
     
     try {
-      const alertsData = await fetchAlerts()
-      if (alertsData.success && alertsData.data) {
-        setAlerts(alertsData.data)
-      } else {
-        throw new Error(alertsData.error || 'Failed to fetch alerts')
+      // Fetch directly from JSON file
+      const response = await fetch('/data/alerts.json')
+      if (!response.ok) {
+        throw new Error(`Failed to fetch alerts: ${response.status}`)
       }
+      
+      const alertsData = await response.json()
+      // Sort by absolute change value (next - prev)
+      const sortedAlerts = alertsData.alerts.sort((a: any, b: any) => 
+        Math.abs(b.next - b.prev) - Math.abs(a.next - a.prev)
+      )
+      setAlerts(sortedAlerts)
     } catch (err) {
       console.error('Error loading alerts:', err)
       setError('Failed to load alerts. Using sample data instead.')

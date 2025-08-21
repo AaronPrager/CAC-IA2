@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "TX-01",
+  "name": "Texas 1",
+  "state": "TX",
+  "member": "Rep. Nathaniel Moran",
+  "metrics": {
+    "access_proximity": 57,
+    "coverage_friction": 83,
+    "availability": 73,
+    "price_pressure": 47,
+    "risk_score": 67
+  },
+  "drivers": [
+    "Weak or no copay cap",
+    "Recent FDA shortage signal"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.hhs.texas.gov/services/health/medicaid-chip",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "press",
+      "title": "Local clinic expands insulin program",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-17"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 9528 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-10"
+    },
+    {
+      "type": "press",
+      "title": "Local clinic expands insulin program",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-21"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "TX-01 Site 1",
+      "lat": 33.8686,
+      "lon": -82.8711
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-01 Site 2",
+      "lat": 34.3039,
+      "lon": -97.7769
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-01 Site 3",
+      "lat": 25.9052,
+      "lon": -119.1064
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-01 Site 4",
+      "lat": 46.9065,
+      "lon": -79.0095
+    },
+    {
+      "site_type": "CHC",
+      "name": "TX-01 Site 5",
+      "lat": 31.6902,
+      "lon": -97.1074
+    },
+    {
+      "site_type": "340B",
+      "name": "TX-01 Site 6",
+      "lat": 33.5874,
+      "lon": -105.1121
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

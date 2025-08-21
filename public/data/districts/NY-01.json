@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "NY-01",
+  "name": "New York 1",
+  "state": "NY",
+  "member": "Rep. Nick LaLota",
+  "metrics": {
+    "access_proximity": 29,
+    "coverage_friction": 54,
+    "availability": 48,
+    "price_pressure": 64,
+    "risk_score": 44
+  },
+  "drivers": [
+    "Below-median site density"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.health.ny.gov/health_care/medicaid/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 7187 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-24"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 3802 \u2014 Drug Supply Transparency Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-12"
+    },
+    {
+      "type": "press",
+      "title": "Member statement on insulin pricing",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-10"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "NY-01 Site 1",
+      "lat": 40.802,
+      "lon": -97.8647
+    },
+    {
+      "site_type": "340B",
+      "name": "NY-01 Site 2",
+      "lat": 31.1702,
+      "lon": -91.1409
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

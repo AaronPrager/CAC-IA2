@@ -1,94 +1,681 @@
 {
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
   "districts": [
     {
-      "id": "MA-04",
-      "name": "Massachusetts 4th District",
-      "state": "Massachusetts",
-      "stateCode": "MA",
-      "population": 734823,
-      "area": 325,
-      "coordinates": [42.3601, -71.0589],
-      "bounds": [[42.2, -71.2], [42.5, -70.9]],
-      "representative": "Jake Auchincloss",
-      "party": "Democratic",
-      "lastElection": "2022",
-      "margin": 0.12
+      "id": "AZ-01",
+      "name": "Arizona 1",
+      "state": "AZ",
+      "member": "Rep. David Schweikert",
+      "metrics": {
+        "risk_score": 56
+      },
+      "sites": [
+        {
+          "lat": 33.4484,
+          "lon": -112.0740
+        }
+      ]
+    },
+    {
+      "id": "AZ-02",
+      "name": "Arizona 2",
+      "state": "AZ",
+      "member": "Rep. Eli Crane",
+      "metrics": {
+        "risk_score": 47
+      },
+      "sites": [
+        {
+          "lat": 32.2226,
+          "lon": -110.9747
+        }
+      ]
+    },
+    {
+      "id": "AZ-03",
+      "name": "Arizona 3",
+      "state": "AZ",
+      "member": "Rep. Ruben Gallego",
+      "metrics": {
+        "risk_score": 34
+      },
+      "sites": [
+        {
+          "lat": 33.4152,
+          "lon": -111.8315
+        }
+      ]
+    },
+    {
+      "id": "CA-01",
+      "name": "California 1",
+      "state": "CA",
+      "member": "Rep. Doug LaMalfa",
+      "metrics": {
+        "risk_score": 58
+      },
+      "sites": [
+        {
+          "lat": 39.8283,
+          "lon": -121.1638
+        }
+      ]
+    },
+    {
+      "id": "CA-02",
+      "name": "California 2",
+      "state": "CA",
+      "member": "Rep. Jared Huffman",
+      "metrics": {
+        "risk_score": 49
+      },
+      "sites": [
+        {
+          "lat": 38.5816,
+          "lon": -121.4944
+        }
+      ]
+    },
+    {
+      "id": "CA-03",
+      "name": "California 3",
+      "state": "CA",
+      "member": "Rep. Kevin Kiley",
+      "metrics": {
+        "risk_score": 57
+      },
+      "sites": [
+        {
+          "lat": 38.5449,
+          "lon": -121.7405
+        }
+      ]
     },
     {
       "id": "CA-16",
-      "name": "California 16th District",
-      "state": "California",
-      "stateCode": "CA",
-      "population": 761387,
-      "area": 412,
-      "coordinates": [37.3382, -121.8863],
-      "bounds": [[37.2, -122.0], [37.5, -121.7]],
-      "representative": "Anna Eshoo",
-      "party": "Democratic",
-      "lastElection": "2022",
-      "margin": 0.34
+      "name": "California 16",
+      "state": "CA",
+      "member": "Rep. Anna Eshoo",
+      "metrics": {
+        "risk_score": 54
+      },
+      "sites": [
+        {
+          "lat": 37.3382,
+          "lon": -121.8863
+        }
+      ]
+    },
+    {
+      "id": "CO-01",
+      "name": "Colorado 1",
+      "state": "CO",
+      "member": "Rep. Diana DeGette",
+      "metrics": {
+        "risk_score": 41
+      },
+      "sites": [
+        {
+          "lat": 39.7392,
+          "lon": -104.9903
+        }
+      ]
+    },
+    {
+      "id": "CO-02",
+      "name": "Colorado 2",
+      "state": "CO",
+      "member": "Rep. Joe Neguse",
+      "metrics": {
+        "risk_score": 53
+      },
+      "sites": [
+        {
+          "lat": 40.5853,
+          "lon": -105.0844
+        }
+      ]
+    },
+    {
+      "id": "CO-03",
+      "name": "Colorado 3",
+      "state": "CO",
+      "member": "Rep. Lauren Boebert",
+      "metrics": {
+        "risk_score": 49
+      },
+      "sites": [
+        {
+          "lat": 38.8339,
+          "lon": -104.8214
+        }
+      ]
+    },
+    {
+      "id": "FL-01",
+      "name": "Florida 1",
+      "state": "FL",
+      "member": "Rep. Matt Gaetz",
+      "metrics": {
+        "risk_score": 67
+      },
+      "sites": [
+        {
+          "lat": 30.3322,
+          "lon": -81.6557
+        }
+      ]
+    },
+    {
+      "id": "FL-02",
+      "name": "Florida 2",
+      "state": "FL",
+      "member": "Rep. Neal Dunn",
+      "metrics": {
+        "risk_score": 57
+      },
+      "sites": [
+        {
+          "lat": 30.4383,
+          "lon": -84.2807
+        }
+      ]
+    },
+    {
+      "id": "FL-03",
+      "name": "Florida 3",
+      "state": "FL",
+      "member": "Rep. Kat Cammack",
+      "metrics": {
+        "risk_score": 41
+      },
+      "sites": [
+        {
+          "lat": 29.6516,
+          "lon": -82.3248
+        }
+      ]
+    },
+    {
+      "id": "GA-01",
+      "name": "Georgia 1",
+      "state": "GA",
+      "member": "Rep. Buddy Carter",
+      "metrics": {
+        "risk_score": 52
+      },
+      "sites": [
+        {
+          "lat": 32.0809,
+          "lon": -81.0912
+        }
+      ]
+    },
+    {
+      "id": "GA-02",
+      "name": "Georgia 2",
+      "state": "GA",
+      "member": "Rep. Sanford Bishop",
+      "metrics": {
+        "risk_score": 50
+      },
+      "sites": [
+        {
+          "lat": 32.8407,
+          "lon": -83.6324
+        }
+      ]
+    },
+    {
+      "id": "GA-03",
+      "name": "Georgia 3",
+      "state": "GA",
+      "member": "Rep. Drew Ferguson",
+      "metrics": {
+        "risk_score": 43
+      },
+      "sites": [
+        {
+          "lat": 33.7490,
+          "lon": -84.3880
+        }
+      ]
     },
     {
       "id": "GA-07",
-      "name": "Georgia 7th District",
-      "state": "Georgia",
-      "stateCode": "GA",
-      "population": 789234,
-      "area": 298,
-      "coordinates": [33.7490, -84.3880],
-      "bounds": [[33.6, -84.5], [33.9, -84.2]],
-      "representative": "Lucy McBath",
-      "party": "Democratic",
-      "lastElection": "2022",
-      "margin": 0.08
+      "name": "Georgia 7",
+      "state": "GA",
+      "member": "Rep. Lucy McBath",
+      "metrics": {
+        "risk_score": 59
+      },
+      "sites": [
+        {
+          "lat": 33.9519,
+          "lon": -83.3576
+        }
+      ]
     },
     {
-      "id": "TX-23",
-      "name": "Texas 23rd District",
-      "state": "Texas",
-      "stateCode": "TX",
-      "population": 812456,
-      "area": 567,
-      "coordinates": [29.4241, -98.4936],
-      "bounds": [[29.2, -98.7], [29.6, -98.2]],
-      "representative": "Tony Gonzales",
-      "party": "Republican",
-      "lastElection": "2022",
-      "margin": 0.15
+      "id": "IL-01",
+      "name": "Illinois 1",
+      "state": "IL",
+      "member": "Rep. Jonathan Jackson",
+      "metrics": {
+        "risk_score": 61
+      },
+      "sites": [
+        {
+          "lat": 41.8781,
+          "lon": -87.6298
+        }
+      ]
     },
     {
-      "id": "NY-12",
-      "name": "New York 12th District",
-      "state": "New York",
-      "stateCode": "NY",
-      "population": 745123,
-      "area": 234,
-      "coordinates": [40.7128, -74.0060],
-      "bounds": [[40.6, -74.1], [40.8, -73.9]],
-      "representative": "Jerry Nadler",
-      "party": "Democratic",
-      "lastElection": "2022",
-      "margin": 0.42
+      "id": "IL-02",
+      "name": "Illinois 2",
+      "state": "IL",
+      "member": "Rep. Robin Kelly",
+      "metrics": {
+        "risk_score": 51
+      },
+      "sites": [
+        {
+          "lat": 40.0583,
+          "lon": -88.2826
+        }
+      ]
     },
     {
-      "id": "FL-18",
-      "name": "Florida 18th District",
-      "state": "Florida",
-      "stateCode": "FL",
-      "population": 798234,
-      "area": 456,
-      "coordinates": [26.7153, -80.0534],
-      "bounds": [[26.6, -80.2], [26.8, -79.9]],
-      "representative": "Brian Mast",
-      "party": "Republican",
-      "lastElection": "2022",
-      "margin": 0.18
+      "id": "IL-03",
+      "name": "Illinois 3",
+      "state": "IL",
+      "member": "Rep. Delia Ramirez",
+      "metrics": {
+        "risk_score": 51
+      },
+      "sites": [
+        {
+          "lat": 39.7860,
+          "lon": -89.6501
+        }
+      ]
+    },
+    {
+      "id": "MA-01",
+      "name": "Massachusetts 1",
+      "state": "MA",
+      "member": "Rep. Richard Neal",
+      "metrics": {
+        "risk_score": 44
+      },
+      "sites": [
+        {
+          "lat": 42.2302,
+          "lon": -71.5301
+        }
+      ]
+    },
+    {
+      "id": "MA-02",
+      "name": "Massachusetts 2",
+      "state": "MA",
+      "member": "Rep. Jim McGovern",
+      "metrics": {
+        "risk_score": 60
+      },
+      "sites": [
+        {
+          "lat": 42.3601,
+          "lon": -71.0589
+        }
+      ]
+    },
+    {
+      "id": "MA-03",
+      "name": "Massachusetts 3",
+      "state": "MA",
+      "member": "Rep. Lori Trahan",
+      "metrics": {
+        "risk_score": 72
+      },
+      "sites": [
+        {
+          "lat": 42.2302,
+          "lon": -71.5301
+        }
+      ]
+    },
+    {
+      "id": "MA-04",
+      "name": "Massachusetts 4",
+      "state": "MA",
+      "member": "Rep. Jake Auchincloss",
+      "metrics": {
+        "risk_score": 46
+      },
+      "sites": [
+        {
+          "lat": 42.3601,
+          "lon": -71.0589
+        }
+      ]
+    },
+    {
+      "id": "MI-01",
+      "name": "Michigan 1",
+      "state": "MI",
+      "member": "Rep. Jack Bergman",
+      "metrics": {
+        "risk_score": 62
+      },
+      "sites": [
+        {
+          "lat": 42.2302,
+          "lon": -83.1499
+        }
+      ]
+    },
+    {
+      "id": "MI-02",
+      "name": "Michigan 2",
+      "state": "MI",
+      "member": "Rep. John Moolenaar",
+      "metrics": {
+        "risk_score": 51
+      },
+      "sites": [
+        {
+          "lat": 42.2302,
+          "lon": -83.1499
+        }
+      ]
+    },
+    {
+      "id": "MI-03",
+      "name": "Michigan 3",
+      "state": "MI",
+      "member": "Rep. Hillary Scholten",
+      "metrics": {
+        "risk_score": 53
+      },
+      "sites": [
+        {
+          "lat": 42.2302,
+          "lon": -83.1499
+        }
+      ]
+    },
+    {
+      "id": "NC-01",
+      "name": "North Carolina 1",
+      "state": "NC",
+      "member": "Rep. Don Davis",
+      "metrics": {
+        "risk_score": 61
+      },
+      "sites": [
+        {
+          "lat": 35.7796,
+          "lon": -78.6382
+        }
+      ]
+    },
+    {
+      "id": "NC-02",
+      "name": "North Carolina 2",
+      "state": "NC",
+      "member": "Rep. Deborah Ross",
+      "metrics": {
+        "risk_score": 54
+      },
+      "sites": [
+        {
+          "lat": 35.2271,
+          "lon": -80.8431
+        }
+      ]
+    },
+    {
+      "id": "NC-03",
+      "name": "North Carolina 3",
+      "state": "NC",
+      "member": "Rep. Greg Murphy",
+      "metrics": {
+        "risk_score": 47
+      },
+      "sites": [
+        {
+          "lat": 35.7796,
+          "lon": -78.6382
+        }
+      ]
+    },
+    {
+      "id": "NJ-01",
+      "name": "New Jersey 1",
+      "state": "NJ",
+      "member": "Rep. Donald Norcross",
+      "metrics": {
+        "risk_score": 61
+      },
+      "sites": [
+        {
+          "lat": 40.7128,
+          "lon": -74.0060
+        }
+      ]
+    },
+    {
+      "id": "NJ-02",
+      "name": "New Jersey 2",
+      "state": "NJ",
+      "member": "Rep. Jeff Van Drew",
+      "metrics": {
+        "risk_score": 43
+      },
+      "sites": [
+        {
+          "lat": 40.7128,
+          "lon": -74.0060
+        }
+      ]
+    },
+    {
+      "id": "NJ-03",
+      "name": "New Jersey 3",
+      "state": "NJ",
+      "member": "Rep. Andy Kim",
+      "metrics": {
+        "risk_score": 48
+      },
+      "sites": [
+        {
+          "lat": 40.7128,
+          "lon": -74.0060
+        }
+      ]
+    },
+    {
+      "id": "NY-01",
+      "name": "New York 1",
+      "state": "NY",
+      "member": "Rep. Nick LaLota",
+      "metrics": {
+        "risk_score": 44
+      },
+      "sites": [
+        {
+          "lat": 40.7128,
+          "lon": -73.9352
+        }
+      ]
+    },
+    {
+      "id": "NY-02",
+      "name": "New York 2",
+      "state": "NY",
+      "member": "Rep. Andrew Garbarino",
+      "metrics": {
+        "risk_score": 53
+      },
+      "sites": [
+        {
+          "lat": 40.7128,
+          "lon": -73.9352
+        }
+      ]
+    },
+    {
+      "id": "NY-03",
+      "name": "New York 3",
+      "state": "NY",
+      "member": "Rep. George Santos",
+      "metrics": {
+        "risk_score": 63
+      },
+      "sites": [
+        {
+          "lat": 40.7128,
+          "lon": -73.9352
+        }
+      ]
+    },
+    {
+      "id": "PA-01",
+      "name": "Pennsylvania 1",
+      "state": "PA",
+      "member": "Rep. Brian Fitzpatrick",
+      "metrics": {
+        "risk_score": 38
+      },
+      "sites": [
+        {
+          "lat": 39.9526,
+          "lon": -75.1652
+        }
+      ]
+    },
+    {
+      "id": "PA-02",
+      "name": "Pennsylvania 2",
+      "state": "PA",
+      "member": "Rep. Brendan Boyle",
+      "metrics": {
+        "risk_score": 46
+      },
+      "sites": [
+        {
+          "lat": 39.9526,
+          "lon": -75.1652
+        }
+      ]
+    },
+    {
+      "id": "PA-03",
+      "name": "Pennsylvania 3",
+      "state": "PA",
+      "member": "Rep. Dwight Evans",
+      "metrics": {
+        "risk_score": 57
+      },
+      "sites": [
+        {
+          "lat": 40.4406,
+          "lon": -79.9959
+        }
+      ]
+    },
+    {
+      "id": "TX-01",
+      "name": "Texas 1",
+      "state": "TX",
+      "member": "Rep. Nathaniel Moran",
+      "metrics": {
+        "risk_score": 67
+      },
+      "sites": [
+        {
+          "lat": 31.9686,
+          "lon": -99.9018
+        }
+      ]
+    },
+    {
+      "id": "TX-02",
+      "name": "Texas 2",
+      "state": "TX",
+      "member": "Rep. Dan Crenshaw",
+      "metrics": {
+        "risk_score": 59
+      },
+      "sites": [
+        {
+          "lat": 31.9686,
+          "lon": -99.9018
+        }
+      ]
+    },
+    {
+      "id": "TX-03",
+      "name": "Texas 3",
+      "state": "TX",
+      "member": "Rep. Keith Self",
+      "metrics": {
+        "risk_score": 52
+      },
+      "sites": [
+        {
+          "lat": 31.9686,
+          "lon": -99.9018
+        }
+      ]
+    },
+    {
+      "id": "WA-01",
+      "name": "Washington 1",
+      "state": "WA",
+      "member": "Rep. Suzan DelBene",
+      "metrics": {
+        "risk_score": 61
+      },
+      "sites": [
+        {
+          "lat": 47.6062,
+          "lon": -122.3321
+        }
+      ]
+    },
+    {
+      "id": "WA-02",
+      "name": "Washington 2",
+      "state": "WA",
+      "member": "Rep. Rick Larsen",
+      "metrics": {
+        "risk_score": 62
+      },
+      "sites": [
+        {
+          "lat": 47.6062,
+          "lon": -122.3321
+        }
+      ]
+    },
+    {
+      "id": "WA-03",
+      "name": "Washington 3",
+      "state": "WA",
+      "member": "Rep. Marie Gluesenkamp Perez",
+      "metrics": {
+        "risk_score": 54
+      },
+      "sites": [
+        {
+          "lat": 47.6062,
+          "lon": -122.3321
+        }
+      ]
     }
-  ],
-  "metadata": {
-    "totalDistricts": 6,
-    "lastUpdated": "2024-01-15T12:00:00Z",
-    "dataSource": "Census Bureau, Election Commission",
-    "version": "1.0.0"
-  }
+  ]
 }

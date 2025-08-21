@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "GA-03",
+  "name": "Georgia 3",
+  "state": "GA",
+  "member": "Rep. Drew Ferguson",
+  "metrics": {
+    "access_proximity": 21,
+    "coverage_friction": 65,
+    "availability": 61,
+    "price_pressure": 30,
+    "risk_score": 43
+  },
+  "drivers": [
+    "Below-median site density"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://medicaid.georgia.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 9446 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-19"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 4116 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-14"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "GA-03 Site 1",
+      "lat": 43.9388,
+      "lon": -100.9395
+    },
+    {
+      "site_type": "CHC",
+      "name": "GA-03 Site 2",
+      "lat": 27.9632,
+      "lon": -80.3789
+    },
+    {
+      "site_type": "CHC",
+      "name": "GA-03 Site 3",
+      "lat": 44.1435,
+      "lon": -101.0053
+    },
+    {
+      "site_type": "340B",
+      "name": "GA-03 Site 4",
+      "lat": 41.1478,
+      "lon": -107.7774
+    },
+    {
+      "site_type": "CHC",
+      "name": "GA-03 Site 5",
+      "lat": 30.2623,
+      "lon": -111.4856
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

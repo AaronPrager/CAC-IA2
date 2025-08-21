@@ -1,117 +1,115 @@
 {
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
   "id": "GA-07",
-  "name": "Georgia 7th District",
-  "state": "Georgia",
-  "stateCode": "GA",
-  "population": 789234,
-  "area": 298,
-  "coordinates": [33.7490, -84.3880],
-  "bounds": [[33.6, -84.5], [33.9, -84.2]],
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [[
-      [-84.5, 33.6],
-      [-84.2, 33.6],
-      [-84.2, 33.9],
-      [-84.5, 33.9],
-      [-84.5, 33.6]
-    ]]
+  "name": "Georgia 7",
+  "state": "GA",
+  "member": "Rep. Lucy McBath",
+  "metrics": {
+    "access_proximity": 28,
+    "coverage_friction": 84,
+    "availability": 70,
+    "price_pressure": 85,
+    "risk_score": 59
   },
-  "insulinAccessRisk": {
-    "riskLevel": "high",
-    "riskScore": 78,
-    "factors": {
-      "uninsuredRate": 15.2,
-      "diabetesPrevalence": 12.3,
-      "pharmacyAccess": 65,
-      "incomeLevel": 85000,
-      "ruralAccess": 45
-    },
-    "lastUpdated": "2024-01-15T12:00:00Z"
+  "drivers": [
+    "Weak or no copay cap",
+    "Recent FDA shortage signal",
+    "Recent list-price pressure"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://medicaid.georgia.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
   },
-  "representative": {
-    "name": "Lucy McBath",
-    "party": "Democratic",
-    "phone": "(202) 225-4272",
-    "email": "district7@mail.house.gov",
-    "officeAddress": "Washington, DC",
-    "committeeMemberships": ["Judiciary", "Education and Labor"],
-    "insulinVotingRecord": {
-      "supportForInsulinBills": 78,
-      "recentVotes": [
-        {
-          "bill": "HR 1234",
-          "vote": "yes",
-          "date": "2024-01-10"
-        }
-      ]
-    }
-  },
-  "legislativeLinks": [
+  "legislative_links": [
     {
-      "id": "1",
-      "title": "HR 1234: Insulin Affordability Act",
-      "url": "https://congress.gov/bill/118th-congress/house-bill/1234",
-      "status": "Introduced",
-      "impact": "Direct"
+      "type": "bill",
+      "title": "H.R. 2219 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-10"
     },
     {
-      "id": "2",
-      "title": "S 567: Pharmacy Access Bill",
-      "url": "https://congress.gov/bill/118th-congress/senate-bill/567",
-      "status": "In Committee",
-      "impact": "Indirect"
-    },
-    {
-      "id": "3",
-      "title": "HR 890: Diabetes Prevention Act",
-      "url": "https://congress.gov/bill/118th-congress/house-bill/890",
-      "status": "Passed House",
-      "impact": "Indirect"
+      "type": "bill",
+      "title": "H.R. 9351 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-25"
     }
   ],
   "sites": [
     {
-      "id": "1",
-      "name": "Census Bureau - District Profile",
-      "url": "https://data.census.gov/profile",
-      "type": "census",
-      "description": "Demographic and economic data for the district"
+      "site_type": "340B",
+      "name": "GA-07 Site 1",
+      "lat": 46.3036,
+      "lon": -116.1452
     },
     {
-      "id": "2",
-      "name": "CDC Diabetes Atlas",
-      "url": "https://gis.cdc.gov/grasp/diabetes/DiabetesAtlas.html",
-      "type": "health",
-      "description": "Diabetes prevalence and health indicators"
+      "site_type": "CHC",
+      "name": "GA-07 Site 2",
+      "lat": 28.7964,
+      "lon": -69.3355
     },
     {
-      "id": "3",
-      "name": "BLS Economic Data",
-      "url": "https://www.bls.gov/eag/",
-      "type": "economic",
-      "description": "Employment and economic indicators"
+      "site_type": "340B",
+      "name": "GA-07 Site 3",
+      "lat": 39.396,
+      "lon": -82.7189
     },
     {
-      "id": "4",
-      "name": "HHS Health Resources",
-      "url": "https://data.hrsa.gov/",
-      "type": "health",
-      "description": "Healthcare access and provider data"
+      "site_type": "340B",
+      "name": "GA-07 Site 4",
+      "lat": 41.604,
+      "lon": -87.9149
     },
     {
-      "id": "5",
-      "name": "USDA Rural Development",
-      "url": "https://www.rd.usda.gov/",
-      "type": "infrastructure",
-      "description": "Rural development and infrastructure data"
+      "site_type": "CHC",
+      "name": "GA-07 Site 5",
+      "lat": 41.8223,
+      "lon": -114.3514
     },
     {
-      "id": "6",
-      "name": "Congress.gov District Info",
-      "url": "https://www.congress.gov/members",
-      "type": "legislation",
-      "description": "Representative information and voting records"
+      "site_type": "CHC",
+      "name": "GA-07 Site 6",
+      "lat": 35.3041,
+      "lon": -82.1324
     }
-  ]
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
 }

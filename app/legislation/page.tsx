@@ -1,108 +1,181 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { MapPin, FileText, Newspaper, Calendar, ExternalLink, Users, TrendingUp } from 'lucide-react'
+import { ArrowLeft, FileText, Newspaper, TrendingUp, TrendingDown, Clock } from 'lucide-react'
+
+interface Bill {
+  id: string
+  title: string
+  status: 'introduced' | 'committee' | 'passed' | 'enacted' | 'failed'
+  sponsor: string
+  state: string
+  district: string
+  impact: 'high' | 'medium' | 'low'
+  sentiment: 'positive' | 'neutral' | 'negative'
+  summary: string
+  lastUpdated: string
+}
+
+interface PressArticle {
+  id: string
+  title: string
+  source: string
+  state: string
+  district: string
+  sentiment: 'positive' | 'neutral' | 'negative'
+  summary: string
+  publishedDate: string
+  url: string
+}
 
 export default function LegislationPage() {
-  const [selectedBill, setSelectedBill] = useState<string | null>(null)
-  const [selectedDistrict, setSelectedDistrict] = useState<string>('all')
+  const [selectedState, setSelectedState] = useState<string>('')
+  const [bills, setBills] = useState<Bill[]>([])
+  const [pressArticles, setPressArticles] = useState<PressArticle[]>([])
 
-  const sampleBills = [
-    {
-      id: '1',
-      billNumber: 'HR 1234',
-      title: 'Insulin Affordability Act of 2024',
-      description: 'A bill to cap insulin costs at $35 per month for all Americans',
-      status: 'introduced',
-      sponsor: 'Rep. Johnson (D-CA)',
-      cosponsors: ['Rep. Smith (D-NY)', 'Rep. Davis (D-TX)'],
-      relevantDistricts: ['CA-16', 'NY-12', 'TX-23'],
-      insulinImpact: 'direct',
-      lastUpdated: '2024-01-15'
-    },
-    {
-      id: '2',
-      billNumber: 'S 567',
-      title: 'Pharmacy Access and Transparency Act',
-      description: 'Improving access to pharmacies in rural and underserved areas',
-      status: 'in_committee',
-      sponsor: 'Sen. Brown (D-OH)',
-      cosponsors: ['Sen. Warren (D-MA)', 'Sen. Sanders (I-VT)'],
-      relevantDistricts: ['MA-04', 'OH-03', 'VT-AL'],
-      insulinImpact: 'indirect',
-      lastUpdated: '2024-01-10'
-    },
-    {
-      id: '3',
-      billNumber: 'HR 890',
-      title: 'Diabetes Prevention and Management Act',
-      description: 'Funding for diabetes education and prevention programs',
-      status: 'passed_house',
-      sponsor: 'Rep. Garcia (D-IL)',
-      cosponsors: ['Rep. Lee (D-CA)', 'Rep. Thompson (D-MS)'],
-      relevantDistricts: ['IL-04', 'CA-16', 'MS-02'],
-      insulinImpact: 'indirect',
-      lastUpdated: '2024-01-08'
-    }
-  ]
+  useEffect(() => {
+    // Sample legislation data
+    const sampleBills: Bill[] = [
+      {
+        id: 'HR-1234',
+        title: 'Insulin Affordability Act of 2024',
+        status: 'introduced',
+        sponsor: 'Rep. Johnson (CA-16)',
+        state: 'CA',
+        district: 'CA-16',
+        impact: 'high',
+        sentiment: 'positive',
+        summary: 'Bill to cap insulin copays at $35/month for all Americans',
+        lastUpdated: '2024-01-15'
+      },
+      {
+        id: 'S-5678',
+        title: 'Diabetes Prevention and Treatment Enhancement Act',
+        status: 'committee',
+        sponsor: 'Sen. Smith (TX)',
+        state: 'TX',
+        district: 'TX-01',
+        impact: 'medium',
+        sentiment: 'positive',
+        summary: 'Expands Medicare coverage for diabetes prevention programs',
+        lastUpdated: '2024-01-10'
+      },
+      {
+        id: 'HR-9012',
+        title: '340B Drug Pricing Program Reform',
+        status: 'passed',
+        sponsor: 'Rep. Davis (NY-12)',
+        state: 'NY',
+        district: 'NY-12',
+        impact: 'high',
+        sentiment: 'neutral',
+        summary: 'Reforms the 340B program to improve access to affordable medications',
+        lastUpdated: '2024-01-05'
+      },
+      {
+        id: 'S-3456',
+        title: 'State Insulin Cap Preemption Act',
+        status: 'introduced',
+        sponsor: 'Sen. Wilson (FL)',
+        state: 'FL',
+        district: 'FL-08',
+        impact: 'medium',
+        sentiment: 'negative',
+        summary: 'Would prevent states from setting insulin price caps',
+        lastUpdated: '2024-01-12'
+      }
+    ]
 
-  const samplePress = [
-    {
-      id: '1',
-      title: 'Insulin Prices Continue to Rise Despite Federal Efforts',
-      source: 'Healthcare Weekly',
-      url: 'https://example.com/article1',
-      publishDate: '2024-01-15',
-      relevantDistricts: ['CA-16', 'NY-12'],
-      summary: 'Analysis of recent insulin price trends and legislative responses',
-      sentiment: 'negative'
-    },
-    {
-      id: '2',
-      title: 'New Bill Aims to Cap Insulin Costs at $35',
-      source: 'Policy Today',
-      url: 'https://example.com/article2',
-      publishDate: '2024-01-14',
-      relevantDistricts: ['CA-16', 'TX-23'],
-      summary: 'Coverage of HR 1234 and its potential impact on insulin affordability',
-      sentiment: 'positive'
-    }
-  ]
+    const samplePress: PressArticle[] = [
+      {
+        id: 'press-1',
+        title: 'California Lawmakers Push for Insulin Price Controls',
+        source: 'Los Angeles Times',
+        state: 'CA',
+        district: 'CA-16',
+        sentiment: 'positive',
+        summary: 'State legislators introduce comprehensive insulin affordability measures',
+        publishedDate: '2024-01-15',
+        url: 'https://www.latimes.com/california-insulin-prices'
+      },
+      {
+        id: 'press-2',
+        title: 'Texas Health Centers Struggle with Insulin Access',
+        source: 'Houston Chronicle',
+        state: 'TX',
+        district: 'TX-01',
+        sentiment: 'negative',
+        summary: 'Report highlights gaps in diabetes care access across rural Texas',
+        publishedDate: '2024-01-14',
+        url: 'https://www.houstonchronicle.com/texas-insulin-access'
+      },
+      {
+        id: 'press-3',
+        title: 'New York Expands Medicaid Diabetes Coverage',
+        source: 'New York Post',
+        state: 'NY',
+        district: 'NY-12',
+        sentiment: 'positive',
+        summary: 'State announces expanded coverage for diabetes medications and supplies',
+        publishedDate: '2024-01-13',
+        url: 'https://nypost.com/ny-medicaid-diabetes'
+      },
+      {
+        id: 'press-4',
+        title: 'Florida Pharmacies Face Insulin Supply Challenges',
+        source: 'Miami Herald',
+        state: 'FL',
+        district: 'FL-08',
+        sentiment: 'neutral',
+        summary: 'Supply chain issues affecting insulin availability in South Florida',
+        publishedDate: '2024-01-12',
+        url: 'https://www.miamiherald.com/florida-insulin-supply'
+      }
+    ]
+
+    setBills(sampleBills)
+    setPressArticles(samplePress)
+  }, [])
+
+  const handleStateChange = (state: string) => {
+    setSelectedState(state)
+  }
+
+  // Filter legislation by selected state only
+  const filteredBills = selectedState 
+    ? bills.filter(bill => bill.state === selectedState)
+    : bills
+
+  const filteredPress = selectedState 
+    ? pressArticles.filter(article => article.state === selectedState)
+    : pressArticles
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'introduced':
-        return 'bg-blue-100 text-blue-800'
-      case 'in_committee':
-        return 'bg-yellow-100 text-yellow-800'
-      case 'passed_house':
-        return 'bg-green-100 text-green-800'
-      case 'passed_senate':
-        return 'bg-green-100 text-green-800'
-      case 'enacted':
-        return 'bg-purple-100 text-purple-800'
-      case 'failed':
-        return 'bg-red-100 text-red-800'
-      default:
-        return 'bg-gray-100 text-gray-800'
+      case 'introduced': return 'bg-blue-100 text-blue-800'
+      case 'committee': return 'bg-yellow-100 text-yellow-800'
+      case 'passed': return 'bg-green-100 text-green-800'
+      case 'enacted': return 'bg-purple-100 text-purple-800'
+      case 'failed': return 'bg-red-100 text-red-800'
+      default: return 'bg-gray-100 text-gray-800'
     }
   }
 
-  const getStatusLabel = (status: string) => {
-    return status.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())
+  const getImpactColor = (impact: string) => {
+    switch (impact) {
+      case 'high': return 'bg-red-100 text-red-800'
+      case 'medium': return 'bg-yellow-100 text-yellow-800'
+      case 'low': return 'bg-green-100 text-green-800'
+      default: return 'bg-gray-100 text-gray-800'
+    }
   }
 
-  const getSentimentColor = (sentiment: string) => {
+  const getSentimentIcon = (sentiment: string) => {
     switch (sentiment) {
-      case 'positive':
-        return 'bg-green-100 text-green-800'
-      case 'negative':
-        return 'bg-red-100 text-red-800'
-      case 'neutral':
-        return 'bg-gray-100 text-gray-800'
-      default:
-        return 'bg-gray-100 text-gray-800'
+      case 'positive': return <TrendingUp className="h-4 w-4 text-green-600" />
+      case 'negative': return <TrendingDown className="h-4 w-4 text-red-600" />
+      default: return <Clock className="h-4 w-4 text-gray-600" />
     }
   }
 
@@ -113,25 +186,25 @@ export default function LegislationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <MapPin className="h-8 w-8 text-primary-600 mr-3" />
-              <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-primary-600">
-                Insulin Access Dashboard
+              <Link href="/" className="mr-4 text-gray-500 hover:text-gray-700">
+                <ArrowLeft className="h-6 w-6" />
               </Link>
+              <h1 className="text-2xl font-bold text-gray-900">Legislation & Press Coverage</h1>
             </div>
             <nav className="flex space-x-8">
-              <Link href="/" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/" className="text-gray-500 hover:text-gray-700">
                 Risk Map
               </Link>
-              <Link href="/legislation" className="text-gray-900 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/legislation" className="text-blue-600 hover:text-blue-800 font-medium">
                 Legislation
               </Link>
-              <Link href="/alerts" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
-                Alerts
-              </Link>
-              <Link href="/actions" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/actions" className="text-gray-500 hover:text-gray-700">
                 Take Action
               </Link>
-              <Link href="/about" className="text-gray-500 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/alerts" className="text-gray-500 hover:text-gray-700">
+                Alerts
+              </Link>
+              <Link href="/about" className="text-gray-500 hover:text-gray-700">
                 About
               </Link>
             </nav>
@@ -141,174 +214,222 @@ export default function LegislationPage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Page Header */}
-        <div className="mb-8">
-          <div className="flex items-center mb-4">
-            <FileText className="h-8 w-8 text-primary-600 mr-3" />
-            <h1 className="text-3xl font-bold text-gray-900">Legislation & Press Coverage</h1>
+        {/* State Selector */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 mb-6">
+          <div className="text-sm text-gray-700 font-medium mb-3">Select State</div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+              <label htmlFor="state-select" className="block text-sm font-medium text-gray-700 mb-2">
+                State
+              </label>
+              <select
+                id="state-select"
+                value={selectedState}
+                onChange={(e) => handleStateChange(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="">All States</option>
+                <option value="CA">California</option>
+                <option value="TX">Texas</option>
+                <option value="NY">New York</option>
+                <option value="FL">Florida</option>
+                <option value="IL">Illinois</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="OH">Ohio</option>
+                <option value="GA">Georgia</option>
+                <option value="NC">North Carolina</option>
+                <option value="MI">Michigan</option>
+                <option value="NJ">New Jersey</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="MA">Massachusetts</option>
+                <option value="TN">Tennessee</option>
+                <option value="IN">Indiana</option>
+                <option value="MO">Missouri</option>
+                <option value="MD">Maryland</option>
+                <option value="CO">Colorado</option>
+                <option value="MN">Minnesota</option>
+                <option value="WI">Wisconsin</option>
+                <option value="LA">Louisiana</option>
+                <option value="AL">Alabama</option>
+                <option value="KY">Kentucky</option>
+                <option value="OR">Oregon</option>
+                <option value="OK">Oklahoma</option>
+                <option value="CT">Connecticut</option>
+                <option value="UT">Utah</option>
+                <option value="IA">Iowa</option>
+                <option value="NV">Nevada</option>
+                <option value="AR">Arkansas</option>
+                <option value="MS">Mississippi</option>
+                <option value="KS">Kansas</option>
+                <option value="NE">Nebraska</option>
+                <option value="ID">Idaho</option>
+                <option value="WV">West Virginia</option>
+                <option value="HI">Hawaii</option>
+                <option value="NH">New Hampshire</option>
+                <option value="ME">Maine</option>
+                <option value="RI">Rhode Island</option>
+                <option value="MT">Montana</option>
+                <option value="DE">Delaware</option>
+                <option value="SD">South Dakota</option>
+                <option value="ND">North Dakota</option>
+                <option value="AK">Alaska</option>
+                <option value="VT">Vermont</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
           </div>
-          <p className="text-lg text-gray-600">
-            Track current bills affecting insulin access and related press coverage by district
-          </p>
+          
+          {selectedState && (
+            <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-md">
+              <div className="text-sm text-blue-800">
+                <span className="font-medium">Showing legislation for:</span> {selectedState}
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <FileText className="h-6 w-6 text-blue-600" />
+        {/* Filter Summary */}
+        <div className="mb-6 bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <FileText className="h-5 w-5 text-blue-600" />
+                <span className="text-sm text-gray-600">
+                  <span className="font-medium">{filteredBills.length}</span> bills
+                  {selectedState && ` in ${selectedState}`}
+                </span>
               </div>
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Active Bills</p>
-                <p className="text-2xl font-bold text-blue-600">{sampleBills.length}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <div className="p-2 bg-green-100 rounded-lg">
-                <Newspaper className="h-6 w-6 text-green-600" />
-              </div>
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Press Articles</p>
-                <p className="text-2xl font-bold text-green-600">{samplePress.length}</p>
+              <div className="flex items-center space-x-2">
+                <Newspaper className="h-5 w-5 text-green-600" />
+                <span className="text-sm text-gray-600">
+                  <span className="font-medium">{filteredPress.length}</span> articles
+                  {selectedState && ` in ${selectedState}`}
+                </span>
               </div>
             </div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <div className="p-2 bg-purple-100 rounded-lg">
-                <Users className="h-6 w-6 text-purple-600" />
-              </div>
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Districts Affected</p>
-                <p className="text-2xl font-bold text-purple-600">12</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="flex items-center">
-              <div className="p-2 bg-orange-100 rounded-lg">
-                <TrendingUp className="h-6 w-6 text-orange-600" />
-              </div>
-              <div className="ml-4">
-                <p className="text-sm font-medium text-gray-600">Direct Impact</p>
-                <p className="text-2xl font-bold text-orange-600">2</p>
-              </div>
-            </div>
+            {selectedState && (
+              <button
+                onClick={() => {
+                  setSelectedState('')
+                }}
+                className="text-sm text-gray-500 hover:text-gray-700 underline"
+              >
+                Clear filters
+              </button>
+            )}
           </div>
         </div>
 
         {/* Legislation Section */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-8">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Current Legislation</h2>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Bill
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Status
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Sponsor
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Impact
-                  </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Districts
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {sampleBills.map((bill) => (
-                  <tr key={bill.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4">
-                      <div>
-                        <div className="text-sm font-medium text-gray-900">{bill.billNumber}</div>
-                        <div className="text-sm text-gray-500">{bill.title}</div>
+        <div className="mb-8">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <FileText className="h-6 w-6 mr-3 text-blue-600" />
+              {selectedState ? `${selectedState} Legislation` : 'Current Legislation'}
+            </h2>
+            
+            <div className="grid gap-4">
+              {filteredBills.length > 0 ? (
+                filteredBills.map((bill) => (
+                  <div key={bill.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-lg font-semibold text-gray-900">{bill.title}</h3>
+                      <div className="flex space-x-2">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(bill.status)}`}>
+                          {bill.status.charAt(0).toUpperCase() + bill.status.slice(1)}
+                        </span>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getImpactColor(bill.impact)}`}>
+                          {bill.impact.charAt(0).toUpperCase() + bill.impact.slice(1)} Impact
+                        </span>
                       </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(bill.status)}`}>
-                        {getStatusLabel(bill.status)}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {bill.sponsor}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${
-                        bill.insulinImpact === 'direct' ? 'bg-red-100 text-red-800' :
-                        bill.insulinImpact === 'indirect' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-gray-100 text-gray-800'
-                      }`}>
-                        {bill.insulinImpact}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      {bill.relevantDistricts.join(', ')}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+                    
+                    <div className="text-sm text-gray-600 mb-3">
+                      <span className="font-medium">Sponsor:</span> {bill.sponsor}
+                    </div>
+                    
+                    <p className="text-gray-700 mb-3">{bill.summary}</p>
+                    
+                    <div className="flex justify-between items-center text-sm text-gray-500">
+                      <span>Last updated: {new Date(bill.lastUpdated).toLocaleDateString()}</span>
+                      <div className="flex items-center space-x-1">
+                        {getSentimentIcon(bill.sentiment)}
+                        <span className="capitalize">{bill.sentiment}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  <FileText className="h-12 w-12 mx-auto mb-3 text-gray-300" />
+                  <p className="text-lg font-medium">No legislation found</p>
+                  <p className="text-sm">
+                    {selectedState 
+                      ? `No bills found for the selected state. Try adjusting your filters.`
+                      : 'No bills available at the moment.'
+                    }
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Press Coverage Section */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">Press Coverage</h2>
-          </div>
-          <div className="p-6">
-            <div className="space-y-6">
-              {samplePress.map((article) => (
-                <div key={article.id} className="border border-gray-200 rounded-lg p-4">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="text-lg font-medium text-gray-900 mb-2">{article.title}</h3>
-                      <p className="text-gray-600 mb-3">{article.summary}</p>
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <span className="flex items-center">
-                          <Newspaper className="h-4 w-4 mr-1" />
-                          {article.source}
-                        </span>
-                        <span className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          {article.publishDate}
-                        </span>
-                        <span className="flex items-center">
-                          <MapPin className="h-4 w-4 mr-1" />
-                          {article.relevantDistricts.join(', ')}
-                        </span>
+        <div className="mb-8">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <Newspaper className="h-6 w-6 mr-3 text-green-600" />
+              {selectedState ? `${selectedState} Press Coverage` : 'Press Coverage'}
+            </h2>
+            
+            <div className="grid gap-4">
+              {filteredPress.length > 0 ? (
+                filteredPress.map((article) => (
+                  <div key={article.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-start mb-3">
+                      <h3 className="text-lg font-semibold text-gray-900">{article.title}</h3>
+                      <div className="flex items-center space-x-1">
+                        {getSentimentIcon(article.sentiment)}
+                        <span className="text-sm text-gray-600 capitalize">{article.sentiment}</span>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getSentimentColor(article.sentiment)}`}>
-                        {article.sentiment}
+                    
+                    <div className="text-sm text-gray-600 mb-3">
+                      <span className="font-medium">Source:</span> {article.source}
+                    </div>
+                    
+                    <p className="text-gray-700 mb-3">{article.summary}</p>
+                    
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-500">
+                        Published: {new Date(article.publishedDate).toLocaleDateString()}
                       </span>
                       <a
                         href={article.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary-600 hover:text-primary-700"
+                        className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                       >
-                        <ExternalLink className="h-4 w-4" />
+                        Read Article →
                       </a>
                     </div>
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  <Newspaper className="h-12 w-12 mx-auto mb-3 text-gray-300" />
+                  <p className="text-lg font-medium">No press coverage found</p>
+                  <p className="text-sm">
+                    {selectedState 
+                      ? `No articles found for the selected state. Try adjusting your filters.`
+                      : 'No press coverage available at the moment.'
+                    }
+                  </p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>

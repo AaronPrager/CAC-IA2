@@ -1,0 +1,107 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "MI-03",
+  "name": "Michigan 3",
+  "state": "MI",
+  "member": "Rep. Hillary Scholten",
+  "metrics": {
+    "access_proximity": 40,
+    "coverage_friction": 49,
+    "availability": 82,
+    "price_pressure": 60,
+    "risk_score": 53
+  },
+  "drivers": [
+    "Recent FDA shortage signal"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.michigan.gov/mdhhs/assistance-programs/medicaid",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "bill",
+      "title": "H.R. 2407 \u2014 Essential Medicines Access Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-16"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 5085 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-13"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "CHC",
+      "name": "MI-03 Site 1",
+      "lat": 45.0622,
+      "lon": -124.0003
+    },
+    {
+      "site_type": "340B",
+      "name": "MI-03 Site 2",
+      "lat": 30.3436,
+      "lon": -106.9402
+    },
+    {
+      "site_type": "CHC",
+      "name": "MI-03 Site 3",
+      "lat": 26.5333,
+      "lon": -110.3559
+    },
+    {
+      "site_type": "340B",
+      "name": "MI-03 Site 4",
+      "lat": 36.5148,
+      "lon": -121.3425
+    },
+    {
+      "site_type": "CHC",
+      "name": "MI-03 Site 5",
+      "lat": 42.4103,
+      "lon": -100.355
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}

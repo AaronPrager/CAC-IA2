@@ -10,7 +10,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
   }
   
   .btn-secondary {
@@ -18,7 +18,7 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-md border border-gray-200 p-6;
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
   }
 }
 
@@ -35,4 +35,118 @@
 
 .leaflet-popup-content-wrapper {
   border-radius: 8px;
+}
+
+/* District popup specific styles */
+.district-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.district-popup .leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.district-popup .leaflet-popup-tip {
+  background: white;
+}
+
+/* Custom popup styles */
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+/* Popup hover effects */
+.custom-popup .leaflet-popup-content-wrapper:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* District popup content styles */
+.district-popup-content {
+  transition: all 0.2s ease-in-out;
+}
+
+.district-popup-content:hover {
+  transform: scale(1.02);
+}
+
+.district-popup-content h4 {
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.district-popup-content p {
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.4;
+}
+
+/* Ensure popup content is visible */
+.leaflet-popup-content button {
+  font-family: inherit;
+}
+
+.leaflet-popup-content button:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* Ensure district drawer appears above map */
+.leaflet-container {
+  z-index: 1;
+}
+
+.leaflet-control-container {
+  z-index: 2;
+}
+
+/* District drawer z-index override */
+.district-drawer {
+  z-index: 9999 !important;
+}
+
+/* Selected district marker animation */
+.selected-district-marker {
+  animation: pulse-selected 2s infinite;
+}
+
+@keyframes pulse-selected {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(30, 64, 175, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(30, 64, 175, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(30, 64, 175, 0);
+  }
+}
+
+/* Z-index overrides for Leaflet containers */
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-control {
+  z-index: 2 !important;
+}
+
+.leaflet-popup-pane {
+  z-index: 3 !important;
 }

@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "scoring": {
+    "weights": {
+      "access_proximity": 0.4,
+      "coverage_friction": 0.3,
+      "availability": 0.2,
+      "price_pressure": 0.1
+    },
+    "notes": "Demo metrics; real ETL should normalize by quantiles and compute drive-time proximity."
+  },
+  "feeds": [
+    {
+      "name": "Census TIGER/Line districts",
+      "url": "https://www.census.gov/geographies/mapping-files.html",
+      "last_pull": "2025-08-09",
+      "refresh": "quarterly"
+    },
+    {
+      "name": "HRSA Service Delivery Sites",
+      "url": "https://data.hrsa.gov",
+      "last_pull": "2025-08-10",
+      "refresh": "weekly"
+    },
+    {
+      "name": "340B OPAIS Daily Report",
+      "url": "https://www.hrsa.gov/opa",
+      "last_pull": "2025-08-10",
+      "refresh": "weekly"
+    },
+    {
+      "name": "FDA Drug Shortages",
+      "url": "https://www.fda.gov/drugs/drug-shortages/",
+      "last_pull": "2025-08-10",
+      "refresh": "weekly"
+    },
+    {
+      "name": "Congress.gov API",
+      "url": "https://api.congress.gov/",
+      "last_pull": "2025-08-10",
+      "refresh": "daily"
+    },
+    {
+      "name": "State insulin copay caps (compiled)",
+      "url": "https://www.ncsl.org/",
+      "last_pull": "2025-08-08",
+      "refresh": "monthly"
+    }
+  ],
+  "methodology": "Access proximity, coverage friction, availability, and price pressure scaled 0\u2013100 and combined via weighted sum. This is a static demo snapshot for UI development.",
+  "disclaimers": "Prototype data for demonstration; not medical advice."
+}

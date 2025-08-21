@@ -1,0 +1,96 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-08-17T15:00:00Z",
+  "id": "WA-02",
+  "name": "Washington 2",
+  "state": "WA",
+  "member": "Rep. Rick Larsen",
+  "metrics": {
+    "access_proximity": 84,
+    "coverage_friction": 33,
+    "availability": 52,
+    "price_pressure": 82,
+    "risk_score": 62
+  },
+  "drivers": [
+    "Longer travel to dispensing sites",
+    "Recent list-price pressure"
+  ],
+  "resources": {
+    "hrsa_clinic_finder": "https://findahealthcenter.hrsa.gov/",
+    "state_medicaid_info": "https://www.hca.wa.gov/",
+    "manufacturer_assistance": [
+      {
+        "name": "Lilly Insulin Value Program",
+        "url": "https://www.lilly.com/insulin"
+      },
+      {
+        "name": "NovoCare",
+        "url": "https://www.novocare.com/"
+      },
+      {
+        "name": "Sanofi Patient Connection",
+        "url": "https://www.sanofipatientconnection.com/"
+      }
+    ]
+  },
+  "legislative_links": [
+    {
+      "type": "press",
+      "title": "Local clinic expands insulin program",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-23"
+    },
+    {
+      "type": "press",
+      "title": "Member statement on insulin pricing",
+      "url": "https://www.house.gov/",
+      "date": "2025-07-13"
+    },
+    {
+      "type": "bill",
+      "title": "H.R. 8168 \u2014 Insulin Affordability Act",
+      "url": "https://www.congress.gov/",
+      "date": "2025-07-17"
+    }
+  ],
+  "sites": [
+    {
+      "site_type": "340B",
+      "name": "WA-02 Site 1",
+      "lat": 43.8287,
+      "lon": -98.2368
+    },
+    {
+      "site_type": "340B",
+      "name": "WA-02 Site 2",
+      "lat": 26.288,
+      "lon": -113.0664
+    }
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "name": "HRSA Service Delivery Sites",
+        "url": "https://data.hrsa.gov/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "340B OPAIS Daily Report",
+        "url": "https://www.hrsa.gov/opa",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "FDA Drug Shortages",
+        "url": "https://www.fda.gov/drugs/drug-shortages/",
+        "last_pull": "2025-08-10"
+      },
+      {
+        "name": "Congress.gov API",
+        "url": "https://api.congress.gov/",
+        "last_pull": "2025-08-10"
+      }
+    ],
+    "notes": "Distances proxied; demo metrics only."
+  }
+}
